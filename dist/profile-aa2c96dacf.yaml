@@ -1,0 +1,41 @@
+proxy-groups:
+- name: Proxies
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+rule-providers:
+  rule_96832ce98ef0:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/force-direct.list
+    path: ./rule_providers/rule_96832ce98ef0.list
+    interval: 86400
+  rule_c4576567e7b4:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/force-proxy.list
+    path: ./rule_providers/rule_c4576567e7b4.list
+    interval: 86400
+  rule_347f22de8968:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/acl/cn-domains.txt
+    path: ./rule_providers/rule_347f22de8968.list
+    interval: 86400
+  rule_858f6b570d31:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/acl/gfwlist.txt
+    path: ./rule_providers/rule_858f6b570d31.list
+    interval: 86400
+rules:
+- RULE-SET,rule_96832ce98ef0,DIRECT
+- RULE-SET,rule_c4576567e7b4,Proxies
+- RULE-SET,rule_347f22de8968,DIRECT
+- RULE-SET,rule_858f6b570d31,Proxies
+- GEOIP,CN,DIRECT
+- MATCH,Proxies

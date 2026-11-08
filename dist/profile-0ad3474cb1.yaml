@@ -1,0 +1,62 @@
+proxy-groups:
+- name: 🌑Proxy
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+- name: 🛡Guard
+  type: select
+  proxies:
+  - ⛔️Reject
+  - 🌐Direct
+- name: 🌐Direct
+  type: select
+  proxies:
+  - DIRECT
+- name: ⛔️Reject
+  type: select
+  proxies:
+  - REJECT
+rule-providers:
+  rule_ea89004e5b0b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Unbreak.list
+    path: ./rule_providers/rule_ea89004e5b0b.list
+    interval: 86400
+  rule_6279668e57c6:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Advertising.list
+    path: ./rule_providers/rule_6279668e57c6.list
+    interval: 86400
+  rule_563c91674e02:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Privacy.list
+    path: ./rule_providers/rule_563c91674e02.list
+    interval: 86400
+  rule_890a05f32984:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/StreamingCN.list
+    path: ./rule_providers/rule_890a05f32984.list
+    interval: 86400
+  rule_c06dc64d5f3e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/tindy2013/subconverter/master/base/rules/LocalAreaNetwork.list
+    path: ./rule_providers/rule_c06dc64d5f3e.list
+    interval: 86400
+rules:
+- RULE-SET,rule_ea89004e5b0b,🌐Direct
+- RULE-SET,rule_6279668e57c6,🛡Guard
+- RULE-SET,rule_563c91674e02,🛡Guard
+- RULE-SET,rule_890a05f32984,🌑Proxy
+- RULE-SET,rule_c06dc64d5f3e,🌐Direct
+- GEOIP,CN,🌑Proxy
+- MATCH,🌐Direct

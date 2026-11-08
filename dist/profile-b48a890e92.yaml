@@ -1,0 +1,146 @@
+proxy-groups:
+- name: 𝗙𝗶𝗻𝗮𝗹
+  type: select
+  proxies:
+  - DIRECT
+  - 𝙋𝙍𝙊𝙓𝙔 ⛷
+- name: 𝙋𝙍𝙊𝙓𝙔 ⛷
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  tolerance: 50
+  include-all-proxies: true
+  filter: (?:.*)
+- name: 𝙎𝙀𝙇𝙀𝘾𝙏 🪁
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+- name: 𝗬𝗼𝘂𝗧𝘂𝗯𝗲
+  type: select
+  proxies:
+  - 𝙋𝙍𝙊𝙓𝙔 ⛷
+  - DIRECT
+- name: 𝗡𝗲𝘁𝗳𝗹𝗶𝘅
+  type: select
+  proxies:
+  - 𝙎𝙀𝙇𝙀𝘾𝙏 🪁
+- name: 𝗚𝗹𝗼𝗯𝗮𝗹𝗠𝗲𝗱𝗶𝗮
+  type: select
+  proxies:
+  - 𝙋𝙍𝙊𝙓𝙔 ⛷
+  - DIRECT
+- name: 𝗔𝘀𝗶𝗮𝗻𝗠𝗲𝗱𝗶𝗮
+  type: select
+  proxies:
+  - 𝙎𝙀𝙇𝙀𝘾𝙏 🪁
+  - DIRECT
+- name: 𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺
+  type: select
+  proxies:
+  - 𝙋𝙍𝙊𝙓𝙔 ⛷
+  - DIRECT
+- name: 𝗔𝗽𝗽𝗹𝗲
+  type: select
+  proxies:
+  - DIRECT
+  - 𝙋𝙍𝙊𝙓𝙔 ⛷
+rule-providers:
+  rule_a3d7d9b0633a:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/maicoo-l/Surge/master/rules/Special.list
+    path: ./rule_providers/rule_a3d7d9b0633a.list
+    interval: 86400
+  rule_0d98b26974e4:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/maicoo-l/Surge/master/rules/media/YouTube.list
+    path: ./rule_providers/rule_0d98b26974e4.list
+    interval: 86400
+  rule_009e67fc0302:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/maicoo-l/Surge/master/rules/media/Netflix.list
+    path: ./rule_providers/rule_009e67fc0302.list
+    interval: 86400
+  rule_7f0f14065384:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/maicoo-l/Surge/master/rules/media/Pornhub.list
+    path: ./rule_providers/rule_7f0f14065384.list
+    interval: 86400
+  rule_60fb210a6965:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/maicoo-l/Surge/master/rules/GlobalMedia.list
+    path: ./rule_providers/rule_60fb210a6965.list
+    interval: 86400
+  rule_972179f75807:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/maicoo-l/Surge/master/rules/AsianMedia.list
+    path: ./rule_providers/rule_972179f75807.list
+    interval: 86400
+  rule_72520302805f:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/maicoo-l/Surge/master/rules/Telegram.list
+    path: ./rule_providers/rule_72520302805f.list
+    interval: 86400
+  rule_8806f1f80b8c:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/maicoo-l/Surge/master/rules/Mail.list
+    path: ./rule_providers/rule_8806f1f80b8c.list
+    interval: 86400
+  rule_3af3b9d61eab:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/maicoo-l/Surge/master/rules/Global.list
+    path: ./rule_providers/rule_3af3b9d61eab.list
+    interval: 86400
+  rule_25e7295a73bd:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/maicoo-l/Surge/master/rules/China.list
+    path: ./rule_providers/rule_25e7295a73bd.list
+    interval: 86400
+  rule_b878d44c96bb:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/maicoo-l/Surge/master/rules/Apple.list
+    path: ./rule_providers/rule_b878d44c96bb.list
+    interval: 86400
+  rule_c06dc64d5f3e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/tindy2013/subconverter/master/base/rules/LocalAreaNetwork.list
+    path: ./rule_providers/rule_c06dc64d5f3e.list
+    interval: 86400
+rules:
+- RULE-SET,rule_a3d7d9b0633a,DIRECT
+- RULE-SET,rule_0d98b26974e4,𝗬𝗼𝘂𝗧𝘂𝗯𝗲
+- RULE-SET,rule_009e67fc0302,𝗡𝗲𝘁𝗳𝗹𝗶𝘅
+- RULE-SET,rule_7f0f14065384,𝙋𝙍𝙊𝙓𝙔 ⛷
+- RULE-SET,rule_60fb210a6965,𝗚𝗹𝗼𝗯𝗮𝗹𝗠𝗲𝗱𝗶𝗮
+- RULE-SET,rule_972179f75807,𝗔𝘀𝗶𝗮𝗻𝗠𝗲𝗱𝗶𝗮
+- RULE-SET,rule_72520302805f,𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺
+- RULE-SET,rule_8806f1f80b8c,𝙋𝙍𝙊𝙓𝙔 ⛷
+- RULE-SET,rule_3af3b9d61eab,𝙋𝙍𝙊𝙓𝙔 ⛷
+- RULE-SET,rule_25e7295a73bd,DIRECT
+- RULE-SET,rule_b878d44c96bb,𝗔𝗽𝗽𝗹𝗲
+- RULE-SET,rule_c06dc64d5f3e,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,𝗙𝗶𝗻𝗮𝗹

@@ -1,0 +1,249 @@
+proxy-groups:
+- name: Proxies
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - HK
+  - JP
+  - SG
+  - TW
+  - US
+- name: YouTube
+  type: select
+  proxies:
+  - Proxies
+  - HK
+  - JP
+  - SG
+  - TW
+  - US
+- name: Netflix
+  type: select
+  proxies:
+  - Proxies
+  - HK
+  - JP
+  - SG
+  - TW
+  - US
+- name: Disney
+  type: select
+  proxies:
+  - Proxies
+  - HK
+  - JP
+  - SG
+  - TW
+  - US
+- name: Bahamut
+  type: select
+  proxies:
+  - Proxies
+  - HK
+  - TW
+- name: Bilibili
+  type: select
+  proxies:
+  - DIRECT
+  - HK
+  - TW
+- name: Telegram
+  type: select
+  proxies:
+  - Proxies
+  - HK
+  - JP
+  - SG
+  - TW
+  - US
+- name: Steam
+  type: select
+  proxies:
+  - Proxies
+  - DIRECT
+  - HK
+  - JP
+  - SG
+  - TW
+  - US
+- name: PayPal
+  type: select
+  proxies:
+  - Proxies
+  - DIRECT
+  - HK
+  - JP
+  - SG
+  - TW
+  - US
+- name: OpenAI
+  type: select
+  proxies:
+  - Proxies
+  - HK
+  - JP
+  - SG
+  - TW
+  - US
+- name: Apple
+  type: select
+  proxies:
+  - Proxies
+  - DIRECT
+  - HK
+  - JP
+  - SG
+  - TW
+  - US
+- name: Final
+  type: select
+  proxies:
+  - Proxies
+  - DIRECT
+- name: HK
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  include-all-proxies: true
+  filter: (?:港\|HK\|Hong\ Kong)
+- name: SG
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  include-all-proxies: true
+  filter: (?:新\|新加坡\|狮城\|SG\|Singapore)
+- name: TW
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  include-all-proxies: true
+  filter: (?:台\|台湾\|台灣\|新北\|彰化\|深台\|CHT\|HINET\|TW\|Taiwan)
+- name: JP
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  include-all-proxies: true
+  filter: (?:日\(\(\?!用\)\.\)\+\|\[\^\-\]日\|东京\|大阪\|埼玉\|JP\|Japan)
+- name: US
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  include-all-proxies: true
+  filter: (?:美\|洛杉矶\|圣何塞\|西雅图\|US\|USA\|United\ States)
+rule-providers:
+  rule_3c1ed6b3832d:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/Unbreak.list
+    path: ./rule_providers/rule_3c1ed6b3832d.list
+    interval: 86400
+  rule_2296b7d7117f:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/StreamingMedia/Video/YouTube.list
+    path: ./rule_providers/rule_2296b7d7117f.list
+    interval: 86400
+  rule_b1a3dd5e72e9:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/StreamingMedia/Video/Netflix.list
+    path: ./rule_providers/rule_b1a3dd5e72e9.list
+    interval: 86400
+  rule_59e33c92855b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/StreamingMedia/Video/DisneyPlus.list
+    path: ./rule_providers/rule_59e33c92855b.list
+    interval: 86400
+  rule_f841f5a3967f:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/StreamingMedia/Video/Bahamut.list
+    path: ./rule_providers/rule_f841f5a3967f.list
+    interval: 86400
+  rule_f0940c0a7af0:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/StreamingMedia/StreamingSE.list
+    path: ./rule_providers/rule_f0940c0a7af0.list
+    interval: 86400
+  rule_4fd3276e9305:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/Extra/Telegram/Telegram.list
+    path: ./rule_providers/rule_4fd3276e9305.list
+    interval: 86400
+  rule_c821f6f93510:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/Extra/Game/Steam.list
+    path: ./rule_providers/rule_c821f6f93510.list
+    interval: 86400
+  rule_c6ce05c5f872:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/Extra/PayPal.list
+    path: ./rule_providers/rule_c6ce05c5f872.list
+    interval: 86400
+  rule_d1ebdc9b2fbf:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/Extra/OpenAI/OpenAI.list
+    path: ./rule_providers/rule_d1ebdc9b2fbf.list
+    interval: 86400
+  rule_e6e17c2bf308:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/Extra/Apple/Apple.list
+    path: ./rule_providers/rule_e6e17c2bf308.list
+    interval: 86400
+  rule_3612ef52d60d:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/Global.list
+    path: ./rule_providers/rule_3612ef52d60d.list
+    interval: 86400
+  rule_16f1e7b1b6f0:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/China.list
+    path: ./rule_providers/rule_16f1e7b1b6f0.list
+    interval: 86400
+  rule_cf8da0e1000e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/LocalAreaNetwork.list
+    path: ./rule_providers/rule_cf8da0e1000e.list
+    interval: 86400
+rules:
+- RULE-SET,rule_3c1ed6b3832d,DIRECT
+- RULE-SET,rule_2296b7d7117f,YouTube
+- RULE-SET,rule_b1a3dd5e72e9,Netflix
+- RULE-SET,rule_59e33c92855b,Disney
+- RULE-SET,rule_f841f5a3967f,Bahamut
+- RULE-SET,rule_f0940c0a7af0,Bilibili
+- RULE-SET,rule_4fd3276e9305,Telegram
+- RULE-SET,rule_c821f6f93510,Steam
+- RULE-SET,rule_c6ce05c5f872,PayPal
+- RULE-SET,rule_d1ebdc9b2fbf,OpenAI
+- RULE-SET,rule_e6e17c2bf308,Apple
+- RULE-SET,rule_3612ef52d60d,Proxies
+- RULE-SET,rule_16f1e7b1b6f0,DIRECT
+- RULE-SET,rule_cf8da0e1000e,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,Final

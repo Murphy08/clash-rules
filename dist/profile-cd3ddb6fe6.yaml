@@ -1,0 +1,300 @@
+proxy-groups:
+- name: 𝐏𝐫𝐨𝐱𝐲
+  type: select
+  proxies:
+  - 𝐀𝐮𝐭𝐨
+  - 𝐒𝐞𝐥𝐞𝐜𝐭
+  - 𝐅𝐚𝐥𝐥𝐛𝐚𝐜𝐤
+- name: 𝐀𝐮𝐭𝐨
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  include-all-proxies: true
+  filter: (?:.*)
+- name: 𝐒𝐞𝐥𝐞𝐜𝐭
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+- name: 𝐅𝐚𝐥𝐥𝐛𝐚𝐜𝐤
+  type: fallback
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  include-all-proxies: true
+  filter: (?:.*)
+- name: 𝐏𝐚𝐲𝐏𝐚𝐥
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - 𝐏𝐫𝐨𝐱𝐲
+- name: 𝐍𝐞𝐭𝐟𝐥𝐢𝐱
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - 𝐏𝐫𝐨𝐱𝐲
+- name: 𝐓𝐢𝐤𝐓𝐨𝐤
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - 𝐏𝐫𝐨𝐱𝐲
+  - 𝐃𝐢𝐫𝐞𝐜𝐭
+- name: 𝐏𝐨𝐫𝐧𝐇𝐮𝐛
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - 𝐏𝐫𝐨𝐱𝐲
+  - 𝐃𝐢𝐫𝐞𝐜𝐭
+- name: 𝐘𝐨𝐮𝐓𝐮𝐛𝐞
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - 𝐏𝐫𝐨𝐱𝐲
+  - 𝐃𝐢𝐫𝐞𝐜𝐭
+- name: 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - 𝐏𝐫𝐨𝐱𝐲
+  - 𝐃𝐢𝐫𝐞𝐜𝐭
+- name: 𝐍𝐞𝐭𝐞𝐚𝐬𝐞𝐌𝐮𝐬𝐢𝐜
+  type: select
+  include-all-proxies: true
+  filter: (?:🎧)|(?:.*)
+  proxies:
+  - 𝐃𝐢𝐫𝐞𝐜𝐭
+- name: 𝐒𝐩𝐞𝐞𝐝𝐓𝐞𝐬𝐭
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - 𝐏𝐫𝐨𝐱𝐲
+  - 𝐃𝐢𝐫𝐞𝐜𝐭
+- name: 𝐀𝐩𝐩𝐥𝐞
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - 𝐃𝐢𝐫𝐞𝐜𝐭
+  - 𝐏𝐫𝐨𝐱𝐲
+- name: 𝐀𝐝 𝐁𝐥𝐨𝐜𝐤
+  type: select
+  proxies:
+  - 𝐑𝐞𝐣𝐞𝐜𝐭
+  - 𝐑𝐞𝐣𝐞𝐜𝐭-𝐓𝐢𝐧𝐲𝐠𝐢𝐟
+  - 𝐃𝐢𝐫𝐞𝐜𝐭
+- name: 𝐅𝐢𝐧𝐚𝐥
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - 𝐏𝐫𝐨𝐱𝐲
+  - 𝐃𝐢𝐫𝐞𝐜𝐭
+- name: 𝐃𝐢𝐫𝐞𝐜𝐭
+  type: select
+  proxies:
+  - DIRECT
+- name: 𝐑𝐞𝐣𝐞𝐜𝐭
+  type: select
+  proxies:
+  - REJECT
+- name: 𝐑𝐞𝐣𝐞𝐜𝐭-𝐓𝐢𝐧𝐲𝐠𝐢𝐟
+  type: select
+  proxies:
+  - REJECT-TINYGIF
+- name: REJECT-TINYGIF
+  type: select
+  proxies:
+  - REJECT
+rule-providers:
+  rule_d07a19135d39:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Liby.list
+    path: ./rule_providers/rule_d07a19135d39.list
+    interval: 86400
+  rule_c3867d7e6385:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Surge/Ruleset/Tide.list
+    path: ./rule_providers/rule_c3867d7e6385.list
+    interval: 86400
+  rule_69f2e30a500f:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Surge/Ruleset/BlockOTA.list
+    path: ./rule_providers/rule_69f2e30a500f.list
+    interval: 86400
+  rule_2ab6708f7315:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Surge/Ruleset/Antirevoke.list
+    path: ./rule_providers/rule_2ab6708f7315.list
+    interval: 86400
+  rule_03001138dc6f:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Surge/Ruleset/TikTok.list
+    path: ./rule_providers/rule_03001138dc6f.list
+    interval: 86400
+  rule_2035be0610ad:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Sub/YouTube.list
+    path: ./rule_providers/rule_2035be0610ad.list
+    interval: 86400
+  rule_4ac4c1e824ad:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Sub/Netflix.list
+    path: ./rule_providers/rule_4ac4c1e824ad.list
+    interval: 86400
+  rule_0455ee25b833:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Sub/Pornhub.list
+    path: ./rule_providers/rule_0455ee25b833.list
+    interval: 86400
+  rule_99ee50d38257:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Sub/Telegram.list
+    path: ./rule_providers/rule_99ee50d38257.list
+    interval: 86400
+  rule_1b7ef5fa7a0b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Sub/PayPal.list
+    path: ./rule_providers/rule_1b7ef5fa7a0b.list
+    interval: 86400
+  rule_8740d652f08e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Surge/Ruleset/Mail.list
+    path: ./rule_providers/rule_8740d652f08e.list
+    interval: 86400
+  rule_8ddb90a9fe1f:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Surge/Ruleset/GoogleDrive.list
+    path: ./rule_providers/rule_8ddb90a9fe1f.list
+    interval: 86400
+  rule_9c8cc319e13c:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Sub/Speedtest.list
+    path: ./rule_providers/rule_9c8cc319e13c.list
+    interval: 86400
+  rule_e5a677842fc9:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Apple_API.list
+    path: ./rule_providers/rule_e5a677842fc9.list
+    interval: 86400
+  rule_fd17a2bf20ff:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Apple_CDN.list
+    path: ./rule_providers/rule_fd17a2bf20ff.list
+    interval: 86400
+  rule_d22fbf9599f7:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Surge/Ruleset/Special.list
+    path: ./rule_providers/rule_d22fbf9599f7.list
+    interval: 86400
+  rule_cf85d17a6d48:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Surge/Ruleset/UnlockNeteaseMusic.list
+    path: ./rule_providers/rule_cf85d17a6d48.list
+    interval: 86400
+  rule_6c3159e48e83:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/GlobalMedia.list
+    path: ./rule_providers/rule_6c3159e48e83.list
+    interval: 86400
+  rule_596ec610504b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Global.list
+    path: ./rule_providers/rule_596ec610504b.list
+    interval: 86400
+  rule_beb4e98b7877:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/AsianMedia.list
+    path: ./rule_providers/rule_beb4e98b7877.list
+    interval: 86400
+  rule_ac87fbd31198:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Domestic.list
+    path: ./rule_providers/rule_ac87fbd31198.list
+    interval: 86400
+  rule_9cced73f1092:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Region.list
+    path: ./rule_providers/rule_9cced73f1092.list
+    interval: 86400
+  rule_c06dc64d5f3e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/tindy2013/subconverter/master/base/rules/LocalAreaNetwork.list
+    path: ./rule_providers/rule_c06dc64d5f3e.list
+    interval: 86400
+rules:
+- RULE-SET,rule_d07a19135d39,𝐀𝐝 𝐁𝐥𝐨𝐜𝐤
+- RULE-SET,rule_c3867d7e6385,𝐀𝐝 𝐁𝐥𝐨𝐜𝐤
+- RULE-SET,rule_69f2e30a500f,𝐀𝐝 𝐁𝐥𝐨𝐜𝐤
+- RULE-SET,rule_2ab6708f7315,𝐀𝐝 𝐁𝐥𝐨𝐜𝐤
+- RULE-SET,rule_03001138dc6f,𝐓𝐢𝐤𝐓𝐨𝐤
+- RULE-SET,rule_2035be0610ad,𝐘𝐨𝐮𝐓𝐮𝐛𝐞
+- RULE-SET,rule_4ac4c1e824ad,𝐍𝐞𝐭𝐟𝐥𝐢𝐱
+- RULE-SET,rule_0455ee25b833,𝐏𝐨𝐫𝐧𝐇𝐮𝐛
+- RULE-SET,rule_99ee50d38257,𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦
+- RULE-SET,rule_1b7ef5fa7a0b,𝐏𝐚𝐲𝐏𝐚𝐥
+- RULE-SET,rule_8740d652f08e,𝐏𝐫𝐨𝐱𝐲
+- RULE-SET,rule_8ddb90a9fe1f,𝐏𝐫𝐨𝐱𝐲
+- RULE-SET,rule_9c8cc319e13c,𝐒𝐩𝐞𝐞𝐝𝐓𝐞𝐬𝐭
+- RULE-SET,rule_e5a677842fc9,𝐀𝐩𝐩𝐥𝐞
+- RULE-SET,rule_fd17a2bf20ff,𝐃𝐢𝐫𝐞𝐜𝐭
+- RULE-SET,rule_d22fbf9599f7,𝐃𝐢𝐫𝐞𝐜𝐭
+- RULE-SET,rule_cf85d17a6d48,𝐍𝐞𝐭𝐞𝐚𝐬𝐞𝐌𝐮𝐬𝐢𝐜
+- RULE-SET,rule_6c3159e48e83,𝐏𝐫𝐨𝐱𝐲
+- RULE-SET,rule_596ec610504b,𝐏𝐫𝐨𝐱𝐲
+- RULE-SET,rule_beb4e98b7877,𝐃𝐢𝐫𝐞𝐜𝐭
+- RULE-SET,rule_ac87fbd31198,𝐃𝐢𝐫𝐞𝐜𝐭
+- RULE-SET,rule_9cced73f1092,𝐃𝐢𝐫𝐞𝐜𝐭
+- RULE-SET,rule_c06dc64d5f3e,𝐃𝐢𝐫𝐞𝐜𝐭
+- GEOIP,CN,𝐃𝐢𝐫𝐞𝐜𝐭
+- MATCH,𝐅𝐢𝐧𝐚𝐥

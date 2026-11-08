@@ -1,0 +1,72 @@
+{
+  "profiles": 70,
+  "updated_or_retained": 59,
+  "failures": [
+    {
+      "index": "profile-c4f6894ff4",
+      "name": "默认（附带用于 Clash 的 AdGuard DNS）",
+      "url": "https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/default_with_clash_adg.yml",
+      "error": "source is a SubConverter template, not standalone YAML"
+    },
+    {
+      "index": "profile-af1d4d888f",
+      "name": "多策略组默认白名单模式",
+      "url": "https://raw.nameless13.com/api/public/dl/ROzQqi2S/white.ini",
+      "error": "HTTP Error 401: Unauthorized"
+    },
+    {
+      "index": "profile-92c47815d0",
+      "name": "多策略组可以有效减少审计触发",
+      "url": "https://raw.nameless13.com/api/public/dl/ptLeiO3S/mayinggfw.ini",
+      "error": "HTTP Error 401: Unauthorized"
+    },
+    {
+      "index": "profile-ac7149f5b2",
+      "name": "精简策略默认白名单",
+      "url": "https://raw.nameless13.com/api/public/dl/FWSh3dXz/easy3.ini",
+      "error": "HTTP Error 401: Unauthorized"
+    },
+    {
+      "index": "profile-bbc291a36c",
+      "name": "多策略增加SMTP策略",
+      "url": "https://raw.nameless13.com/api/public/dl/L_-vxO7I/youtube.ini",
+      "error": "HTTP Error 401: Unauthorized"
+    },
+    {
+      "index": "profile-8e78c4d625",
+      "name": "无策略入门推荐",
+      "url": "https://raw.nameless13.com/api/public/dl/zKF9vFbb/easy.ini",
+      "error": "HTTP Error 401: Unauthorized"
+    },
+    {
+      "index": "profile-df8325e434",
+      "name": "无策略入门推荐国家分组",
+      "url": "https://raw.nameless13.com/api/public/dl/E69bzCaE/easy2.ini",
+      "error": "HTTP Error 401: Unauthorized"
+    },
+    {
+      "index": "profile-adcdb08bcc",
+      "name": "无策略仅IPIP CN + Final",
+      "url": "https://raw.nameless13.com/api/public/dl/XHr0miMg/ipip.ini",
+      "error": "HTTP Error 401: Unauthorized"
+    },
+    {
+      "index": "profile-76eed22b1a",
+      "name": "无策略魅影vip分组",
+      "url": "https://raw.nameless13.com/api/public/dl/BBnfb5lD/MAYINGVIP.ini",
+      "error": "HTTP Error 401: Unauthorized"
+    },
+    {
+      "index": "profile-d9e71d5fee",
+      "name": "w8ves",
+      "url": "https://raw.nameless13.com/api/public/dl/M-We_Fn7/w8ves.ini",
+      "error": "HTTP Error 401: Unauthorized"
+    },
+    {
+      "index": "profile-ac75307637",
+      "name": "Flowercloud",
+      "url": "https://subweb.s3.fr-par.scw.cloud/RemoteConfig/customized/flower.ini",
+      "error": "invalid rule source URL: Profiles/Surge/Ruleset/Unbreak.list"
+    }
+  ]
+}

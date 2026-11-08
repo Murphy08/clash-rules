@@ -1,0 +1,315 @@
+proxy-groups:
+- name: Proxies
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+- name: Domestic
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - DIRECT
+  - Proxies
+- name: Special
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - DIRECT
+  - Domestic
+  - Proxies
+- name: AsianTV
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - DIRECT
+  - Domestic
+  - Proxies
+- name: Netease Music
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - DIRECT
+  - Domestic
+  - Proxies
+- name: GlobalTV
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - Proxies
+- name: Others
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - Proxies
+  - DIRECT
+- name: Asian TV
+  type: select
+  include-all-proxies: true
+- name: Global TV
+  type: select
+  include-all-proxies: true
+rule-providers:
+  rule_cfac7ffe8d85:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/master/Surge/Surge%203/Provider/Media/Netease%20Music.list
+    path: ./rule_providers/rule_cfac7ffe8d85.list
+    interval: 86400
+  rule_c00c922c7454:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/tindy2013/subconverter/master/base/rules/lhie1/Netease%20Music%20IP.list
+    path: ./rule_providers/rule_c00c922c7454.list
+    interval: 86400
+  rule_cb94f1b27bda:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/master/Surge/Surge%203/Provider/Domestic.list
+    path: ./rule_providers/rule_cb94f1b27bda.list
+    interval: 86400
+  rule_3ef327160f49:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/master/Surge/Surge%203/Provider/Special.list
+    path: ./rule_providers/rule_3ef327160f49.list
+    interval: 86400
+  rule_d2be3f4e0165:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/master/Surge/Surge%203/Provider/Proxy.list
+    path: ./rule_providers/rule_d2be3f4e0165.list
+    interval: 86400
+  rule_c06dc64d5f3e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/tindy2013/subconverter/master/base/rules/LocalAreaNetwork.list
+    path: ./rule_providers/rule_c06dc64d5f3e.list
+    interval: 86400
+  rule_00bd38d0b471:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/ABC.list
+    path: ./rule_providers/rule_00bd38d0b471.list
+    interval: 86400
+  rule_36cc1b5c6d0f:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Amazon.list
+    path: ./rule_providers/rule_36cc1b5c6d0f.list
+    interval: 86400
+  rule_e77a751167f9:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/BBC%20iPlayer.list
+    path: ./rule_providers/rule_e77a751167f9.list
+    interval: 86400
+  rule_2a3972a47ab7:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/DAZN.list
+    path: ./rule_providers/rule_2a3972a47ab7.list
+    interval: 86400
+  rule_cfff02dd232a:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Discovery%20Plus.list
+    path: ./rule_providers/rule_cfff02dd232a.list
+    interval: 86400
+  rule_27cf94915225:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/encoreTVB.list
+    path: ./rule_providers/rule_27cf94915225.list
+    interval: 86400
+  rule_985176f72840:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/F1%20TV.list
+    path: ./rule_providers/rule_985176f72840.list
+    interval: 86400
+  rule_5a4d1c732159:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Fox%20Now.list
+    path: ./rule_providers/rule_5a4d1c732159.list
+    interval: 86400
+  rule_d1684df6be65:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Hulu.list
+    path: ./rule_providers/rule_d1684df6be65.list
+    interval: 86400
+  rule_f08ae56ea2f0:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Pandora.list
+    path: ./rule_providers/rule_f08ae56ea2f0.list
+    interval: 86400
+  rule_c80e18792d88:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/PBS.list
+    path: ./rule_providers/rule_c80e18792d88.list
+    interval: 86400
+  rule_47c92e5ff8aa:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Pornhub.list
+    path: ./rule_providers/rule_47c92e5ff8aa.list
+    interval: 86400
+  rule_4151888b05cf:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Soundcloud.list
+    path: ./rule_providers/rule_4151888b05cf.list
+    interval: 86400
+  rule_dc3450f596dc:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Abema%20TV.list
+    path: ./rule_providers/rule_dc3450f596dc.list
+    interval: 86400
+  rule_b2028fdc89fe:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Bahamut.list
+    path: ./rule_providers/rule_b2028fdc89fe.list
+    interval: 86400
+  rule_7faa0e421b0f:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Fox%2B.list
+    path: ./rule_providers/rule_7faa0e421b0f.list
+    interval: 86400
+  rule_185fb8395772:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Hulu%20Japan.list
+    path: ./rule_providers/rule_185fb8395772.list
+    interval: 86400
+  rule_9fa855e759ed:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Japonx.list
+    path: ./rule_providers/rule_9fa855e759ed.list
+    interval: 86400
+  rule_1fa2bc1a13d2:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/JOOX.list
+    path: ./rule_providers/rule_1fa2bc1a13d2.list
+    interval: 86400
+  rule_9e455c7c4f62:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/KKBOX.list
+    path: ./rule_providers/rule_9e455c7c4f62.list
+    interval: 86400
+  rule_388a0aba8cfa:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/KKTV.list
+    path: ./rule_providers/rule_388a0aba8cfa.list
+    interval: 86400
+  rule_1aa11b37a992:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Line%20TV.list
+    path: ./rule_providers/rule_1aa11b37a992.list
+    interval: 86400
+  rule_c9dd9113dee6:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/MOO.list
+    path: ./rule_providers/rule_c9dd9113dee6.list
+    interval: 86400
+  rule_c524816cbca3:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/myTV%20SUPER.list
+    path: ./rule_providers/rule_c524816cbca3.list
+    interval: 86400
+  rule_c2f6acccb6c5:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Niconico.list
+    path: ./rule_providers/rule_c2f6acccb6c5.list
+    interval: 86400
+  rule_45579f599383:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/ViuTV.list
+    path: ./rule_providers/rule_45579f599383.list
+    interval: 86400
+rules:
+- RULE-SET,rule_cfac7ffe8d85,Netease Music
+- RULE-SET,rule_c00c922c7454,Netease Music
+- RULE-SET,rule_cb94f1b27bda,Domestic
+- RULE-SET,rule_3ef327160f49,Special
+- RULE-SET,rule_d2be3f4e0165,Proxies
+- RULE-SET,rule_c06dc64d5f3e,DIRECT
+- GEOIP,CN,Domestic
+- MATCH,Others
+- RULE-SET,rule_00bd38d0b471,Global TV
+- RULE-SET,rule_36cc1b5c6d0f,Global TV
+- RULE-SET,rule_e77a751167f9,Global TV
+- RULE-SET,rule_2a3972a47ab7,Global TV
+- RULE-SET,rule_cfff02dd232a,Global TV
+- RULE-SET,rule_27cf94915225,Global TV
+- RULE-SET,rule_985176f72840,Global TV
+- RULE-SET,rule_5a4d1c732159,Global TV
+- RULE-SET,rule_d1684df6be65,Global TV
+- RULE-SET,rule_f08ae56ea2f0,Global TV
+- RULE-SET,rule_c80e18792d88,Global TV
+- RULE-SET,rule_47c92e5ff8aa,Global TV
+- RULE-SET,rule_4151888b05cf,Global TV
+- RULE-SET,rule_dc3450f596dc,Asian TV
+- RULE-SET,rule_b2028fdc89fe,Asian TV
+- RULE-SET,rule_7faa0e421b0f,Asian TV
+- RULE-SET,rule_185fb8395772,Asian TV
+- RULE-SET,rule_9fa855e759ed,Asian TV
+- RULE-SET,rule_1fa2bc1a13d2,Asian TV
+- RULE-SET,rule_9e455c7c4f62,Asian TV
+- RULE-SET,rule_388a0aba8cfa,Asian TV
+- RULE-SET,rule_1aa11b37a992,Asian TV
+- RULE-SET,rule_c9dd9113dee6,Asian TV
+- RULE-SET,rule_c524816cbca3,Asian TV
+- RULE-SET,rule_c2f6acccb6c5,Asian TV
+- RULE-SET,rule_45579f599383,Asian TV

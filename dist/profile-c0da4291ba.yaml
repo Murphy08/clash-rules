@@ -1,0 +1,389 @@
+proxy-groups:
+- name: 🚀 节点选择
+  type: select
+  proxies:
+  - 💻 普通节点
+  - ♻️ 自动选择
+  - 📺 省流节点
+  - 👍 高级节点
+  - 🇺🇲 美国节点
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇦🇷 阿根廷节点
+  - 🇹🇷 土耳其节点
+  - 🇯🇵 日本节点
+  - 🎥 流媒体解锁
+  - 🍕 手动切换
+  - DIRECT
+- name: 🍕 手动切换
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+- name: ♻️ 自动选择
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+  include-all-proxies: true
+  filter: (?:.*)
+- name: 💻 普通节点
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+  include-all-proxies: true
+  filter: (?:[^\.\d](x1|1x)[^\.\d]|^((?!x).)+$)
+- name: 📺 省流节点
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+  include-all-proxies: true
+  filter: (?:(?<![\.\d])(x0\.[1-9]|0\.[1-9]x|x0\.[0-9][0-9]|0\.[0-9][0-9]x)(?![\.\d])|低倍率|省流|大流量)
+- name: 👍 高级节点
+  type: select
+  include-all-proxies: true
+  filter: (?:(?<![\.\d])(x1\.[1-9]|1\.[1-9]x|x[^01](\.[0-9])?|[^01](\.[0-9])?x|x\d{2,}|\d{2,}x)(?![\.\d])|专线|专用|高级|直连|急速|高倍率|IEPL|IPLC|AIA|CTM|CC|iepl|iplc|aia|ctm|cc|AC)
+- name: 🇺🇲 美国节点
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 150
+  include-all-proxies: true
+  filter: (?:美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|[^A-Za-z]+US[^A-Za-z]+|United
+    States)
+- name: 🇭🇰 香港节点
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+  include-all-proxies: true
+  filter: (?:港|HK|Hong Kong)
+- name: 🇯🇵 日本节点
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+  include-all-proxies: true
+  filter: (?:日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|[^A-Za-z]+JP[^A-Za-z]+|Japan)
+- name: 🇨🇳 台湾节点
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+  include-all-proxies: true
+  filter: (?:台|新北|彰化|[^A-Za-z]+TW[^A-Za-z]+|Taiwan)
+- name: 🇸🇬 新加坡节点
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+  include-all-proxies: true
+  filter: (?:新加坡|坡|狮城|[^A-Za-z]+SG[^A-Za-z]+|Singapore)
+- name: 🇦🇷 阿根廷节点
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+  include-all-proxies: true
+  filter: (?:阿根廷|[^A-Za-z]+AR[^A-Za-z]+|Argentina)
+- name: 🇹🇷 土耳其节点
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+  include-all-proxies: true
+  filter: (?:土耳其|[^A-Za-z]+TR[^A-Za-z]+|Türkiye|Turkey)
+- name: 🎥 流媒体解锁
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+  include-all-proxies: true
+  filter: (?:NF|原生|奈飞|解锁|流媒|迪士尼|N.*D|Netflix|NETFLIX|Media|Disn|Unlock)
+- name: 🛑 广告拦截
+  type: select
+  proxies:
+  - DIRECT
+  - REJECT
+- name: 📲 电报消息
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - ♻️ 自动选择
+  - 📺 省流节点
+  - 💻 普通节点
+  - 🇸🇬 新加坡节点
+  - 🇦🇷 阿根廷节点
+  - 🇹🇷 土耳其节点
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇯🇵 日本节点
+  - 🇺🇲 美国节点
+  - 🍕 手动切换
+  - DIRECT
+- name: 📢 谷歌FCM
+  type: select
+  proxies:
+  - DIRECT
+  - 🚀 节点选择
+  - 🇺🇲 美国节点
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇦🇷 阿根廷节点
+  - 🇹🇷 土耳其节点
+  - 🇯🇵 日本节点
+  - 🍕 手动切换
+- name: 🎞 NETFLIX
+  type: select
+  proxies:
+  - 🎥 流媒体解锁
+  - 👍 高级节点
+  - 🇸🇬 新加坡节点
+  - 🇦🇷 阿根廷节点
+  - 🇹🇷 土耳其节点
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇯🇵 日本节点
+  - 🇺🇲 美国节点
+  - 🚀 节点选择
+- name: 🎥 DisneyP
+  type: select
+  proxies:
+  - 🎥 流媒体解锁
+  - 👍 高级节点
+  - 🇸🇬 新加坡节点
+  - 🇦🇷 阿根廷节点
+  - 🇹🇷 土耳其节点
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇯🇵 日本节点
+  - 🇺🇲 美国节点
+  - 🚀 节点选择
+- name: 🌍 国外媒体
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - ♻️ 自动选择
+  - 📺 省流节点
+  - 💻 普通节点
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇦🇷 阿根廷节点
+  - 🇹🇷 土耳其节点
+  - 🇯🇵 日本节点
+  - 🇺🇲 美国节点
+  - 🍕 手动切换
+  - DIRECT
+- name: 🤖 人工智能
+  type: select
+  proxies:
+  - 🇺🇲 美国节点
+  - 🇸🇬 新加坡节点
+  - 🇦🇷 阿根廷节点
+  - 🇹🇷 土耳其节点
+  - 🇯🇵 日本节点
+  - 🍕 手动切换
+- name: Ⓜ️ 微软服务
+  type: select
+  proxies:
+  - DIRECT
+  - 🚀 节点选择
+  - 🇺🇲 美国节点
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇦🇷 阿根廷节点
+  - 🇹🇷 土耳其节点
+  - 🇯🇵 日本节点
+  - 🍕 手动切换
+- name: 🍎 苹果服务
+  type: select
+  proxies:
+  - DIRECT
+  - 🚀 节点选择
+  - 🇺🇲 美国节点
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇦🇷 阿根廷节点
+  - 🇹🇷 土耳其节点
+  - 🇯🇵 日本节点
+  - 🍕 手动切换
+- name: 🎯 全球直连
+  type: select
+  proxies:
+  - DIRECT
+  - 🚀 节点选择
+  - ♻️ 自动选择
+- name: 🐟 漏网之鱼
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - ♻️ 自动选择
+  - DIRECT
+  - 📺 省流节点
+  - 💻 普通节点
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇦🇷 阿根廷节点
+  - 🇹🇷 土耳其节点
+  - 🇯🇵 日本节点
+  - 🇺🇲 美国节点
+  - 🍕 手动切换
+rule-providers:
+  rule_15673ace2215:
+    type: http
+    behavior: classical
+    format: text
+    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+      #本地/局域网地址'
+    path: ./rule_providers/rule_15673ace2215.list
+    interval: 86400
+  rule_3502123999bf:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+    path: ./rule_providers/rule_3502123999bf.list
+    interval: 86400
+  rule_2ef8c2de8f1d:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+    path: ./rule_providers/rule_2ef8c2de8f1d.list
+    interval: 86400
+  rule_8935a4408251:
+    type: http
+    behavior: classical
+    format: text
+    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
+      #GoogleFCM 谷歌推送服务'
+    path: ./rule_providers/rule_8935a4408251.list
+    interval: 86400
+  rule_164316df4b9e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+    path: ./rule_providers/rule_164316df4b9e.list
+    interval: 86400
+  rule_cb51ca06c702:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
+    path: ./rule_providers/rule_cb51ca06c702.list
+    interval: 86400
+  rule_f39ca44b016b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/Netflix.list
+    path: ./rule_providers/rule_f39ca44b016b.list
+    interval: 86400
+  rule_c93d002f8521:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/DisneyPlus.list
+    path: ./rule_providers/rule_c93d002f8521.list
+    interval: 86400
+  rule_6f1855e80c46:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/juewuy/ShellClash/master/rules/ai.list
+    path: ./rule_providers/rule_6f1855e80c46.list
+    interval: 86400
+  rule_32d15d84dcc8:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+    path: ./rule_providers/rule_32d15d84dcc8.list
+    interval: 86400
+  rule_a6b5a2671532:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+    path: ./rule_providers/rule_a6b5a2671532.list
+    interval: 86400
+  rule_d7ffba4c1b81:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+    path: ./rule_providers/rule_d7ffba4c1b81.list
+    interval: 86400
+  rule_4452a6cc3813:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+    path: ./rule_providers/rule_4452a6cc3813.list
+    interval: 86400
+  rule_3c3e548f4b55:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+    path: ./rule_providers/rule_3c3e548f4b55.list
+    interval: 86400
+  rule_bf23668988ad:
+    type: http
+    behavior: classical
+    format: text
+    url: 'https://raw.githubusercontent.com/UlinoyaPed/ShellClash/dev/lists/proxy.list
+      #personal'
+    path: ./rule_providers/rule_bf23668988ad.list
+    interval: 86400
+  rule_682e137927a0:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./rule_providers/rule_682e137927a0.list
+    interval: 86400
+  rule_5d09e19fea0f:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./rule_providers/rule_5d09e19fea0f.list
+    interval: 86400
+  rule_35c3bb32e42b:
+    type: http
+    behavior: classical
+    format: text
+    url: 'https://raw.githubusercontent.com/UlinoyaPed/ShellClash/dev/lists/direct.list
+      #personal'
+    path: ./rule_providers/rule_35c3bb32e42b.list
+    interval: 86400
+rules:
+- RULE-SET,rule_15673ace2215,🎯 全球直连
+- RULE-SET,rule_3502123999bf,🛑 广告拦截
+- RULE-SET,rule_2ef8c2de8f1d,🛑 广告拦截
+- RULE-SET,rule_8935a4408251,📢 谷歌FCM
+- RULE-SET,rule_164316df4b9e,🎯 全球直连
+- RULE-SET,rule_cb51ca06c702,🎞 NETFLIX
+- RULE-SET,rule_f39ca44b016b,🎞 NETFLIX
+- RULE-SET,rule_c93d002f8521,🎥 DisneyP
+- RULE-SET,rule_6f1855e80c46,🤖 人工智能
+- RULE-SET,rule_32d15d84dcc8,Ⓜ️ 微软服务
+- RULE-SET,rule_a6b5a2671532,🍎 苹果服务
+- RULE-SET,rule_d7ffba4c1b81,📲 电报消息
+- RULE-SET,rule_4452a6cc3813,🌍 国外媒体
+- RULE-SET,rule_3c3e548f4b55,🚀 节点选择
+- RULE-SET,rule_bf23668988ad,🚀 节点选择
+- RULE-SET,rule_682e137927a0,🎯 全球直连
+- RULE-SET,rule_5d09e19fea0f,🎯 全球直连
+- RULE-SET,rule_35c3bb32e42b,🎯 全球直连
+- GEOIP,CN,🎯 全球直连
+- MATCH,🐟 漏网之鱼

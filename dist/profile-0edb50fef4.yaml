@@ -1,0 +1,165 @@
+proxy-groups:
+- name: 🏖广告
+  type: select
+  proxies:
+  - DIRECT
+  - REJECT
+- name: 🍎苹果
+  type: select
+  proxies:
+  - DIRECT
+  - 🔰代理
+- name: 🕹名单
+  type: select
+  proxies:
+  - DIRECT
+  - 🔰代理
+- name: 🔰代理
+  type: select
+  proxies:
+  - 🌟标准专线
+  - 🇭🇰香港中继
+  - 🇨🇳台湾中继
+  - 🇯🇵日本中继
+  - 🇺🇸美国中继
+  - 🇸🇬狮城中继
+  - 🏠墙洞之家
+- name: 🎬奈飞
+  type: select
+  proxies:
+  - 🌟标准专线
+  - 🇭🇰香港中继
+  - 🇸🇬狮城中继
+- name: 📹油管
+  type: select
+  proxies:
+  - 🌟标准专线
+  - 🇭🇰香港中继
+  - 🇯🇵日本中继
+  - 🇺🇸美国中继
+- name: 📡电报
+  type: select
+  proxies:
+  - 🇸🇬狮城中继
+  - 🔰代理
+- name: 🌟标准专线
+  type: select
+  include-all-proxies: true
+  filter: (?:标准\ IPLC)
+- name: 🇭🇰香港中继
+  type: select
+  include-all-proxies: true
+  filter: (?:香港\.\*BGP)
+- name: 🇨🇳台湾中继
+  type: select
+  include-all-proxies: true
+  filter: (?:台湾\.\*BGP)
+- name: 🇯🇵日本中继
+  type: select
+  include-all-proxies: true
+  filter: (?:日本\.\*BGP)
+- name: 🇺🇸美国中继
+  type: select
+  include-all-proxies: true
+  filter: (?:美国\.\*BGP)
+- name: 🇸🇬狮城中继
+  type: select
+  include-all-proxies: true
+  filter: (?:狮城\.\*BGP)
+- name: 🏠墙洞之家
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+rule-providers:
+  rule_69e66d398972:
+    type: http
+    behavior: classical
+    format: text
+    url: https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/connershua_clients.list
+    path: ./rule_providers/rule_69e66d398972.list
+    interval: 86400
+  rule_ea89004e5b0b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Unbreak.list
+    path: ./rule_providers/rule_ea89004e5b0b.list
+    interval: 86400
+  rule_38b06d46d855:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Advertising.list
+    path: ./rule_providers/rule_38b06d46d855.list
+    interval: 86400
+  rule_abb5b7f367ea:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Hijacking.list
+    path: ./rule_providers/rule_abb5b7f367ea.list
+    interval: 86400
+  rule_3177e472428d:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Telegram.list
+    path: ./rule_providers/rule_3177e472428d.list
+    interval: 86400
+  rule_478466a60e71:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Media/YouTube.list
+    path: ./rule_providers/rule_478466a60e71.list
+    interval: 86400
+  rule_b70f15cfde01:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Media/Netflix.list
+    path: ./rule_providers/rule_b70f15cfde01.list
+    interval: 86400
+  rule_2b4c52a62bb0:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Global.list
+    path: ./rule_providers/rule_2b4c52a62bb0.list
+    interval: 86400
+  rule_b610b9bfddd7:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Apple.list
+    path: ./rule_providers/rule_b610b9bfddd7.list
+    interval: 86400
+  rule_471836321aa7:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/China.list
+    path: ./rule_providers/rule_471836321aa7.list
+    interval: 86400
+  rule_c06dc64d5f3e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/tindy2013/subconverter/master/base/rules/LocalAreaNetwork.list
+    path: ./rule_providers/rule_c06dc64d5f3e.list
+    interval: 86400
+rules:
+- DOMAIN-SUFFIX,gdt.qq.com,DIRECT
+- RULE-SET,rule_69e66d398972,DIRECT
+- RULE-SET,rule_ea89004e5b0b,DIRECT
+- RULE-SET,rule_38b06d46d855,🏖广告
+- RULE-SET,rule_abb5b7f367ea,REJECT
+- RULE-SET,rule_3177e472428d,📡电报
+- RULE-SET,rule_478466a60e71,📹油管
+- RULE-SET,rule_b70f15cfde01,🎬奈飞
+- RULE-SET,rule_2b4c52a62bb0,🔰代理
+- RULE-SET,rule_b610b9bfddd7,🍎苹果
+- RULE-SET,rule_471836321aa7,DIRECT
+- RULE-SET,rule_c06dc64d5f3e,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,🕹名单

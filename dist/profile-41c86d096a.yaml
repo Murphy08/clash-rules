@@ -1,0 +1,396 @@
+proxy-groups:
+- name: 🐷 Proxy
+  type: select
+  proxies:
+  - ♻️ 自动选择
+  - 🚀 手动选择
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇯🇵 日本节点
+  - 🇺🇲 美国节点
+  - 🇰🇷 韩国节点
+  - 🔑 专用线路
+  - DIRECT
+- name: 🚀 手动选择
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+- name: ♻️ 自动选择
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  include-all-proxies: true
+  filter: (?:.*)
+- name: 🎯 DIRECT
+  type: select
+  proxies:
+  - DIRECT
+  - 🐷 Proxy
+  - ♻️ 自动选择
+  - 🚀 手动选择
+  - 🔑 专用线路
+- name: 🛑 REJECT
+  type: select
+  proxies:
+  - REJECT
+  - DIRECT
+- name: 📺 BiliBili
+  type: select
+  proxies:
+  - DIRECT
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🚀 手动选择
+- name: 📲 Telegram
+  type: select
+  proxies:
+  - 🐷 Proxy
+  - ♻️ 自动选择
+  - 🇸🇬 新加坡节点
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇯🇵 日本节点
+  - 🇺🇲 美国节点
+  - 🇰🇷 韩国节点
+  - 🔑 专用线路
+  - 🚀 手动选择
+  - DIRECT
+- name: 👨‍💻 Developer
+  type: select
+  proxies:
+  - 🐷 Proxy
+  - ♻️ 自动选择
+  - 🇸🇬 新加坡节点
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇯🇵 日本节点
+  - 🇺🇲 美国节点
+  - 🇰🇷 韩国节点
+  - 🔑 专用线路
+  - 🚀 手动选择
+  - DIRECT
+- name: 📁 OneDrive
+  type: select
+  proxies:
+  - 🐷 Proxy
+  - 🇺🇲 美国节点
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🔑 专用线路
+  - 🚀 手动选择
+  - DIRECT
+- name: Ⓜ️ Microsoft
+  type: select
+  proxies:
+  - 🐷 Proxy
+  - 🇺🇲 美国节点
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🔑 专用线路
+  - 🚀 手动选择
+  - DIRECT
+- name: 🗂 Pikpak
+  type: select
+  proxies:
+  - 🐷 Proxy
+  - 🇺🇲 美国节点
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🔑 专用线路
+  - 🚀 手动选择
+  - DIRECT
+- name: 🚀 SpeedTest
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - 🐷 Proxy
+  - 🇺🇲 美国节点
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🔑 专用线路
+  - 🚀 手动选择
+  - DIRECT
+- name: 🍎 Apple
+  type: select
+  proxies:
+  - 🐷 Proxy
+  - 🇺🇲 美国节点
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🔑 专用线路
+  - 🚀 手动选择
+  - DIRECT
+- name: 🎧 NeteaseMusic
+  type: select
+  include-all-proxies: true
+  filter: (?:网易|音乐|解锁|Music|NetEase)
+  proxies:
+  - DIRECT
+  - 🐷 Proxy
+  - ♻️ 自动选择
+- name: 🌍 ForeignMedia
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - DIRECT
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇯🇵 日本节点
+  - 🔑 专用线路
+  - 🚀 手动选择
+- name: 💼 Company
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - DIRECT
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇯🇵 日本节点
+  - 🔑 专用线路
+  - 🚀 手动选择
+- name: 🐟 Final
+  type: select
+  proxies:
+  - 🐷 Proxy
+  - ♻️ 自动选择
+  - DIRECT
+  - 🇭🇰 香港节点
+  - 🇨🇳 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇯🇵 日本节点
+  - 🇺🇲 美国节点
+  - 🇰🇷 韩国节点
+  - 🚀 手动选择
+- name: 🇭🇰 香港节点
+  type: select
+  include-all-proxies: true
+  filter: (?:港|HK|Hong Kong)
+- name: 🇯🇵 日本节点
+  type: select
+  include-all-proxies: true
+  filter: (?:日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan)
+- name: 🇺🇲 美国节点
+  type: select
+  include-all-proxies: true
+  filter: (?:美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)
+- name: 🇸🇬 新加坡节点
+  type: select
+  include-all-proxies: true
+  filter: (?:新|新加坡|坡|狮城|SG|Singapore)
+- name: 🇨🇳 台湾节点
+  type: select
+  include-all-proxies: true
+  filter: (?:台|新北|彰化|TW|Taiwan)
+- name: 🇰🇷 韩国节点
+  type: select
+  include-all-proxies: true
+  filter: (?:KR|Korea|KOR|首尔|韩|韓)
+- name: 🎥 奈飞节点
+  type: select
+  include-all-proxies: true
+  filter: (?:NF|奈飞|解锁|Netflix|NETFLIX|Media|原生)
+- name: 🔑 专用线路
+  type: select
+  include-all-proxies: true
+  filter: (?:IPLC|IEPL|iplc|iepl|专线)
+rule-providers:
+  rule_9367b9e57f03:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Direct/Direct.list
+    path: ./rule_providers/rule_9367b9e57f03.list
+    interval: 86400
+  rule_d8ce5594b80d:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/Surge/Advertising/Advertising.list
+    path: ./rule_providers/rule_d8ce5594b80d.list
+    interval: 86400
+  rule_194bad848223:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/Surge/Advertising/Advertising_Domain.list
+    path: ./rule_providers/rule_194bad848223.list
+    interval: 86400
+  rule_7c66c979a81c:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/NobyDa/Script/master/Surge/WeChat.list
+    path: ./rule_providers/rule_7c66c979a81c.list
+    interval: 86400
+  rule_a15d70b511e7:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/Surge/NetEaseMusic/NetEaseMusic.list
+    path: ./rule_providers/rule_a15d70b511e7.list
+    interval: 86400
+  rule_76c4cfb5651e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/Surge/BiliBili/BiliBili.list
+    path: ./rule_providers/rule_76c4cfb5651e.list
+    interval: 86400
+  rule_eb57a2c7ba80:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/Surge/Telegram/Telegram.list
+    path: ./rule_providers/rule_eb57a2c7ba80.list
+    interval: 86400
+  rule_7d5ba51fa79d:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list
+    path: ./rule_providers/rule_7d5ba51fa79d.list
+    interval: 86400
+  rule_0f54138b3ccd:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Developer/Developer.list
+    path: ./rule_providers/rule_0f54138b3ccd.list
+    interval: 86400
+  rule_62a4a787cbc2:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple.list
+    path: ./rule_providers/rule_62a4a787cbc2.list
+    interval: 86400
+  rule_a1db7f2e057c:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OneDrive/OneDrive.list
+    path: ./rule_providers/rule_a1db7f2e057c.list
+    interval: 86400
+  rule_77853d7241ab:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Microsoft/Microsoft.list
+    path: ./rule_providers/rule_77853d7241ab.list
+    interval: 86400
+  rule_20e98d848c85:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PikPak/PikPak.list
+    path: ./rule_providers/rule_20e98d848c85.list
+    interval: 86400
+  rule_9cbe5541b8a0:
+    type: http
+    behavior: classical
+    format: text
+    url: https://unpkg.com/proxy-script/config/Surge/rule/company.list
+    path: ./rule_providers/rule_9cbe5541b8a0.list
+    interval: 86400
+  rule_858d27da2631:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Speedtest/Speedtest.list
+    path: ./rule_providers/rule_858d27da2631.list
+    interval: 86400
+  rule_83a9dd079fa0:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GlobalMedia/GlobalMedia.list
+    path: ./rule_providers/rule_83a9dd079fa0.list
+    interval: 86400
+  rule_96f62b614a30:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global.list
+    path: ./rule_providers/rule_96f62b614a30.list
+    interval: 86400
+  rule_be9794062aed:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global_Domain.list
+    path: ./rule_providers/rule_be9794062aed.list
+    interval: 86400
+  rule_2df87bf3d61c:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    path: ./rule_providers/rule_2df87bf3d61c.list
+    interval: 86400
+  rule_220f7f12f48a:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Download/Download.list
+    path: ./rule_providers/rule_220f7f12f48a.list
+    interval: 86400
+  rule_f284e9c967bb:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaMax/ChinaMax.list
+    path: ./rule_providers/rule_f284e9c967bb.list
+    interval: 86400
+  rule_86f05b16bf18:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaMax/ChinaMax_Domain.list
+    path: ./rule_providers/rule_86f05b16bf18.list
+    interval: 86400
+rules:
+- RULE-SET,rule_9367b9e57f03,🎯 DIRECT
+- RULE-SET,rule_d8ce5594b80d,🛑 REJECT
+- RULE-SET,rule_194bad848223,🛑 REJECT
+- RULE-SET,rule_7c66c979a81c,🎯 DIRECT
+- RULE-SET,rule_a15d70b511e7,🎧 NeteaseMusic
+- RULE-SET,rule_76c4cfb5651e,📺 BiliBili
+- RULE-SET,rule_eb57a2c7ba80,📲 Telegram
+- RULE-SET,rule_7d5ba51fa79d,👨‍💻 Developer
+- RULE-SET,rule_0f54138b3ccd,👨‍💻 Developer
+- RULE-SET,rule_62a4a787cbc2,🍎 Apple
+- RULE-SET,rule_a1db7f2e057c,📁 OneDrive
+- RULE-SET,rule_77853d7241ab,Ⓜ️ Microsoft
+- RULE-SET,rule_20e98d848c85,🗂 Pikpak
+- RULE-SET,rule_9cbe5541b8a0,💼 Company
+- RULE-SET,rule_858d27da2631,🚀 SpeedTest
+- RULE-SET,rule_83a9dd079fa0,🌍 ForeignMedia
+- RULE-SET,rule_96f62b614a30,🐷 Proxy
+- RULE-SET,rule_be9794062aed,🐷 Proxy
+- RULE-SET,rule_2df87bf3d61c,🎯 DIRECT
+- RULE-SET,rule_220f7f12f48a,🎯 DIRECT
+- RULE-SET,rule_f284e9c967bb,🎯 DIRECT
+- RULE-SET,rule_86f05b16bf18,🎯 DIRECT
+- GEOIP,CN,🎯 DIRECT
+- MATCH,🐟 Final

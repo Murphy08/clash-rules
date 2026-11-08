@@ -1,0 +1,721 @@
+proxy-groups:
+- name: 🎯 总模式
+  type: select
+  proxies:
+  - Ⓜ️ 延迟最低
+  - Ⓜ️ 负载均衡
+  - Ⓜ️ 故障切换
+  - ♻️ 手动切换
+  - DIRECT
+- name: Ⓜ️ 延迟最低
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+  include-all-proxies: true
+  filter: (?:.*)
+- name: Ⓜ️ 故障切换
+  type: fallback
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  include-all-proxies: true
+  filter: (?:.*)
+- name: Ⓜ️ 负载均衡
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  include-all-proxies: true
+  filter: (?:.*)
+- name: ♻️ 手动切换
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - REJECT
+- name: ♻️ 手动切换1
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - DIRECT
+  - REJECT
+- name: ♻️ 手动切换2
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - DIRECT
+  - REJECT
+- name: ♻️ 手动切换3
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - DIRECT
+  - REJECT
+- name: ♻️ 手动切换4
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - DIRECT
+  - REJECT
+- name: ♻️ 手动切换5
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - DIRECT
+  - REJECT
+- name: 🍎 苹果服务
+  type: select
+  proxies:
+  - DIRECT
+  - 🎯 总模式
+  - Ⓜ️ 负载均衡
+  - Ⓜ️ 延迟最低
+  - Ⓜ️ 故障切换
+  - ♻️ 手动切换
+  - ♻️ 手动切换1
+  - ♻️ 手动切换2
+  - ♻️ 手动切换3
+  - ♻️ 手动切换4
+  - ♻️ 手动切换5
+- name: 🧩 微软服务
+  type: select
+  proxies:
+  - DIRECT
+  - 🎯 总模式
+  - Ⓜ️ 负载均衡
+  - Ⓜ️ 延迟最低
+  - Ⓜ️ 故障切换
+  - ♻️ 手动切换
+  - ♻️ 手动切换1
+  - ♻️ 手动切换2
+  - ♻️ 手动切换3
+  - ♻️ 手动切换4
+  - ♻️ 手动切换5
+- name: 📲 聊天软件
+  type: select
+  proxies:
+  - 🎯 总模式
+  - Ⓜ️ 负载均衡
+  - Ⓜ️ 延迟最低
+  - Ⓜ️ 故障切换
+  - ♻️ 手动切换
+  - ♻️ 手动切换1
+  - ♻️ 手动切换2
+  - ♻️ 手动切换3
+  - ♻️ 手动切换4
+  - ♻️ 手动切换5
+  - DIRECT
+- name: 🤖 OpenAI
+  type: select
+  proxies:
+  - 🎯 总模式
+  - Ⓜ️ 负载均衡
+  - Ⓜ️ 延迟最低
+  - Ⓜ️ 故障切换
+  - ♻️ 手动切换
+  - ♻️ 手动切换1
+  - ♻️ 手动切换2
+  - ♻️ 手动切换3
+  - ♻️ 手动切换4
+  - ♻️ 手动切换5
+  - DIRECT
+- name: 📹 YouTube
+  type: select
+  proxies:
+  - 🎯 总模式
+  - Ⓜ️ 负载均衡
+  - Ⓜ️ 延迟最低
+  - Ⓜ️ 故障切换
+  - ♻️ 手动切换
+  - ♻️ 手动切换1
+  - ♻️ 手动切换2
+  - ♻️ 手动切换3
+  - ♻️ 手动切换4
+  - ♻️ 手动切换5
+  - DIRECT
+- name: 🎥 NETFLIX
+  type: select
+  proxies:
+  - 🎯 总模式
+  - Ⓜ️ 负载均衡
+  - Ⓜ️ 延迟最低
+  - Ⓜ️ 故障切换
+  - ♻️ 手动切换
+  - ♻️ 手动切换1
+  - ♻️ 手动切换2
+  - ♻️ 手动切换3
+  - ♻️ 手动切换4
+  - ♻️ 手动切换5
+  - DIRECT
+- name: 🔍 谷歌服务
+  type: select
+  proxies:
+  - 🎯 总模式
+  - Ⓜ️ 负载均衡
+  - Ⓜ️ 延迟最低
+  - Ⓜ️ 故障切换
+  - ♻️ 手动切换
+  - ♻️ 手动切换1
+  - ♻️ 手动切换2
+  - ♻️ 手动切换3
+  - ♻️ 手动切换4
+  - ♻️ 手动切换5
+  - DIRECT
+- name: 🎮 游戏平台
+  type: select
+  proxies:
+  - 🎯 总模式
+  - Ⓜ️ 负载均衡
+  - Ⓜ️ 延迟最低
+  - Ⓜ️ 故障切换
+  - ♻️ 手动切换
+  - ♻️ 手动切换1
+  - ♻️ 手动切换2
+  - ♻️ 手动切换3
+  - ♻️ 手动切换4
+  - ♻️ 手动切换5
+  - DIRECT
+- name: ⛩ 日韩媒体
+  type: select
+  proxies:
+  - 🎯 总模式
+  - Ⓜ️ 负载均衡
+  - Ⓜ️ 延迟最低
+  - Ⓜ️ 故障切换
+  - ♻️ 手动切换
+  - ♻️ 手动切换1
+  - ♻️ 手动切换2
+  - ♻️ 手动切换3
+  - ♻️ 手动切换4
+  - ♻️ 手动切换5
+  - DIRECT
+- name: 🌍 国外媒体
+  type: select
+  proxies:
+  - 🎯 总模式
+  - Ⓜ️ 负载均衡
+  - Ⓜ️ 延迟最低
+  - Ⓜ️ 故障切换
+  - ♻️ 手动切换
+  - ♻️ 手动切换1
+  - ♻️ 手动切换2
+  - ♻️ 手动切换3
+  - ♻️ 手动切换4
+  - ♻️ 手动切换5
+  - DIRECT
+- name: 🌏 港台媒体
+  type: select
+  proxies:
+  - 🎯 总模式
+  - Ⓜ️ 负载均衡
+  - Ⓜ️ 延迟最低
+  - Ⓜ️ 故障切换
+  - ♻️ 手动切换
+  - ♻️ 手动切换1
+  - ♻️ 手动切换2
+  - ♻️ 手动切换3
+  - ♻️ 手动切换4
+  - ♻️ 手动切换5
+  - DIRECT
+- name: 🇺🇳 国外网站
+  type: select
+  proxies:
+  - 🎯 总模式
+  - Ⓜ️ 负载均衡
+  - Ⓜ️ 延迟最低
+  - Ⓜ️ 故障切换
+  - ♻️ 手动切换
+  - ♻️ 手动切换1
+  - ♻️ 手动切换2
+  - ♻️ 手动切换3
+  - ♻️ 手动切换4
+  - ♻️ 手动切换5
+  - DIRECT
+- name: 🇨🇳 国内网站
+  type: select
+  proxies:
+  - DIRECT
+  - 🎯 总模式
+  - Ⓜ️ 负载均衡
+  - Ⓜ️ 延迟最低
+  - Ⓜ️ 故障切换
+  - ♻️ 手动切换
+  - ♻️ 手动切换1
+  - ♻️ 手动切换2
+  - ♻️ 手动切换3
+  - ♻️ 手动切换4
+  - ♻️ 手动切换5
+- name: 🐟 漏网之鱼
+  type: select
+  proxies:
+  - DIRECT
+  - 🎯 总模式
+  - Ⓜ️ 负载均衡
+  - Ⓜ️ 延迟最低
+  - Ⓜ️ 故障切换
+  - ♻️ 手动切换
+  - ♻️ 手动切换1
+  - ♻️ 手动切换2
+  - ♻️ 手动切换3
+  - ♻️ 手动切换4
+  - ♻️ 手动切换5
+- name: 🛑 广告拦截
+  type: select
+  proxies:
+  - REJECT
+  - DIRECT
+- name: ⛔ 应用净化
+  type: select
+  proxies:
+  - REJECT
+  - DIRECT
+rule-providers:
+  rule_c3e9407ca834:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Other/Direct.list
+    path: ./rule_providers/rule_c3e9407ca834.list
+    interval: 86400
+  rule_ab4f390a9d37:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/LocalAreaNetwork.list
+    path: ./rule_providers/rule_ab4f390a9d37.list
+    interval: 86400
+  rule_da74a731c9f6:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/UnBan.list
+    path: ./rule_providers/rule_da74a731c9f6.list
+    interval: 86400
+  rule_b5eac055683e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/BanAD.list
+    path: ./rule_providers/rule_b5eac055683e.list
+    interval: 86400
+  rule_04c78911e25c:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Other/BanADP.list
+    path: ./rule_providers/rule_04c78911e25c.list
+    interval: 86400
+  rule_6a69b9ba2560:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/BanProgramAD.list
+    path: ./rule_providers/rule_6a69b9ba2560.list
+    interval: 86400
+  rule_d2e8bea1018d:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/Apple.list
+    path: ./rule_providers/rule_d2e8bea1018d.list
+    interval: 86400
+  rule_9d3cc28b8990:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/AppleNews.list
+    path: ./rule_providers/rule_9d3cc28b8990.list
+    interval: 86400
+  rule_6838ef89fdb2:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/AppleTV.list
+    path: ./rule_providers/rule_6838ef89fdb2.list
+    interval: 86400
+  rule_c8d9d2c0c12e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/Microsoft.list
+    path: ./rule_providers/rule_c8d9d2c0c12e.list
+    interval: 86400
+  rule_d134f03dec9f:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/OneDrive.list
+    path: ./rule_providers/rule_d134f03dec9f.list
+    interval: 86400
+  rule_4397603ccb1f:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/Telegram.list
+    path: ./rule_providers/rule_4397603ccb1f.list
+    interval: 86400
+  rule_c8c6a4f5ac1d:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/Whatsapp.list
+    path: ./rule_providers/rule_c8c6a4f5ac1d.list
+    interval: 86400
+  rule_f62dc14ddcb6:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/Line.list
+    path: ./rule_providers/rule_f62dc14ddcb6.list
+    interval: 86400
+  rule_1e4b0e00b784:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/KakaoTalk.list
+    path: ./rule_providers/rule_1e4b0e00b784.list
+    interval: 86400
+  rule_5f1b72e957b9:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Other/ChatGPT.list
+    path: ./rule_providers/rule_5f1b72e957b9.list
+    interval: 86400
+  rule_4f599351bbb6:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/OpenAi.list
+    path: ./rule_providers/rule_4f599351bbb6.list
+    interval: 86400
+  rule_1519772e6da0:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/Epic.list
+    path: ./rule_providers/rule_1519772e6da0.list
+    interval: 86400
+  rule_0ba8512629cd:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/Sony.list
+    path: ./rule_providers/rule_0ba8512629cd.list
+    interval: 86400
+  rule_ba425569ed27:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/Steam.list
+    path: ./rule_providers/rule_ba425569ed27.list
+    interval: 86400
+  rule_8861f16a0867:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/TencentLolm.list
+    path: ./rule_providers/rule_8861f16a0867.list
+    interval: 86400
+  rule_0bc20c52b4b1:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Other/Games.list
+    path: ./rule_providers/rule_0bc20c52b4b1.list
+    interval: 86400
+  rule_7d50a69f5558:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/YouTube.list
+    path: ./rule_providers/rule_7d50a69f5558.list
+    interval: 86400
+  rule_1b34c713a03b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/Netflix.list
+    path: ./rule_providers/rule_1b34c713a03b.list
+    interval: 86400
+  rule_5a5d2e82ee85:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/Niconico.list
+    path: ./rule_providers/rule_5a5d2e82ee85.list
+    interval: 86400
+  rule_109316f9d03d:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/HuluJapan.list
+    path: ./rule_providers/rule_109316f9d03d.list
+    interval: 86400
+  rule_b822a0683b2e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/Japonx.list
+    path: ./rule_providers/rule_b822a0683b2e.list
+    interval: 86400
+  rule_2ea9809820f7:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/AbemaTV.list
+    path: ./rule_providers/rule_2ea9809820f7.list
+    interval: 86400
+  rule_bdfc16df34d5:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/Pixiv.list
+    path: ./rule_providers/rule_bdfc16df34d5.list
+    interval: 86400
+  rule_92b8fde6580c:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/Dmm.list
+    path: ./rule_providers/rule_92b8fde6580c.list
+    interval: 86400
+  rule_37c9dcf86847:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/Bahamut.list
+    path: ./rule_providers/rule_37c9dcf86847.list
+    interval: 86400
+  rule_4f113fc77ab9:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Other/TwMedia.list
+    path: ./rule_providers/rule_4f113fc77ab9.list
+    interval: 86400
+  rule_4f6eb05ee8d4:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/LineTV.list
+    path: ./rule_providers/rule_4f6eb05ee8d4.list
+    interval: 86400
+  rule_68b130d553f4:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/KKTV.list
+    path: ./rule_providers/rule_68b130d553f4.list
+    interval: 86400
+  rule_5c1851abb4f9:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/LiTV.list
+    path: ./rule_providers/rule_5c1851abb4f9.list
+    interval: 86400
+  rule_def5813c0dc4:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/MyTVSuper.list
+    path: ./rule_providers/rule_def5813c0dc4.list
+    interval: 86400
+  rule_4d2b63ea0c01:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/HWTV.list
+    path: ./rule_providers/rule_4d2b63ea0c01.list
+    interval: 86400
+  rule_22c0c4d2934b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/ViuTV.list
+    path: ./rule_providers/rule_22c0c4d2934b.list
+    interval: 86400
+  rule_ddf8da43c757:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/TaiWanGood.list
+    path: ./rule_providers/rule_ddf8da43c757.list
+    interval: 86400
+  rule_e1bc0d8df5b1:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Other/Paramount.list
+    path: ./rule_providers/rule_e1bc0d8df5b1.list
+    interval: 86400
+  rule_fe669e8e3134:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Other/DAZN.list
+    path: ./rule_providers/rule_fe669e8e3134.list
+    interval: 86400
+  rule_392e6bdf9630:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Other/Starplus.list
+    path: ./rule_providers/rule_392e6bdf9630.list
+    interval: 86400
+  rule_8814516108c3:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Other/ProxyMedia.list
+    path: ./rule_providers/rule_8814516108c3.list
+    interval: 86400
+  rule_6e3cc5ba0793:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/ProxyMedia.list
+    path: ./rule_providers/rule_6e3cc5ba0793.list
+    interval: 86400
+  rule_06aebc6db796:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/Google.list
+    path: ./rule_providers/rule_06aebc6db796.list
+    interval: 86400
+  rule_fdb996e1849b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Other/GoogleIP.list
+    path: ./rule_providers/rule_fdb996e1849b.list
+    interval: 86400
+  rule_ffe112de8566:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/GoogleCNProxyIP.list
+    path: ./rule_providers/rule_ffe112de8566.list
+    interval: 86400
+  rule_c1acf053a860:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/GoogleFCM.list
+    path: ./rule_providers/rule_c1acf053a860.list
+    interval: 86400
+  rule_8bf91272bda1:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Ruleset/GoogleCN.list
+    path: ./rule_providers/rule_8bf91272bda1.list
+    interval: 86400
+  rule_c077a0e870bd:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Other/Proxy.list
+    path: ./rule_providers/rule_c077a0e870bd.list
+    interval: 86400
+  rule_fe2a4f391b59:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/ProxyGFWlist.list
+    path: ./rule_providers/rule_fe2a4f391b59.list
+    interval: 86400
+  rule_7fe8923ce0e5:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/ChinaMedia.list
+    path: ./rule_providers/rule_7fe8923ce0e5.list
+    interval: 86400
+  rule_a260c3385ba7:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/ChinaDomain.list
+    path: ./rule_providers/rule_a260c3385ba7.list
+    interval: 86400
+  rule_c691fcf2eed0:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/ChinaCompanyIp.list
+    path: ./rule_providers/rule_c691fcf2eed0.list
+    interval: 86400
+  rule_dca4e983c26a:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rules/ACL4SSR/Clash/Other/China.list
+    path: ./rule_providers/rule_dca4e983c26a.list
+    interval: 86400
+rules:
+- RULE-SET,rule_c3e9407ca834,DIRECT
+- RULE-SET,rule_ab4f390a9d37,DIRECT
+- DOMAIN,dl.google.com,🔍 谷歌服务
+- DOMAIN-SUFFIX,googletraveladservices.com,🔍 谷歌服务
+- RULE-SET,rule_da74a731c9f6,🇨🇳 国内网站
+- RULE-SET,rule_b5eac055683e,🛑 广告拦截
+- RULE-SET,rule_04c78911e25c,⛔ 应用净化
+- RULE-SET,rule_6a69b9ba2560,⛔ 应用净化
+- RULE-SET,rule_d2e8bea1018d,🍎 苹果服务
+- RULE-SET,rule_9d3cc28b8990,🍎 苹果服务
+- RULE-SET,rule_6838ef89fdb2,🍎 苹果服务
+- RULE-SET,rule_c8d9d2c0c12e,🧩 微软服务
+- RULE-SET,rule_d134f03dec9f,🧩 微软服务
+- DOMAIN-KEYWORD,beetalk,📲 聊天软件
+- RULE-SET,rule_4397603ccb1f,📲 聊天软件
+- RULE-SET,rule_c8c6a4f5ac1d,📲 聊天软件
+- RULE-SET,rule_f62dc14ddcb6,📲 聊天软件
+- RULE-SET,rule_1e4b0e00b784,📲 聊天软件
+- RULE-SET,rule_5f1b72e957b9,🤖 OpenAI
+- RULE-SET,rule_4f599351bbb6,🤖 OpenAI
+- RULE-SET,rule_1519772e6da0,🎮 游戏平台
+- RULE-SET,rule_0ba8512629cd,🎮 游戏平台
+- RULE-SET,rule_ba425569ed27,🎮 游戏平台
+- RULE-SET,rule_8861f16a0867,🎮 游戏平台
+- RULE-SET,rule_0bc20c52b4b1,🎮 游戏平台
+- RULE-SET,rule_7d50a69f5558,📹 YouTube
+- RULE-SET,rule_1b34c713a03b,🎥 NETFLIX
+- RULE-SET,rule_5a5d2e82ee85,⛩ 日韩媒体
+- RULE-SET,rule_109316f9d03d,⛩ 日韩媒体
+- RULE-SET,rule_b822a0683b2e,⛩ 日韩媒体
+- RULE-SET,rule_2ea9809820f7,⛩ 日韩媒体
+- RULE-SET,rule_bdfc16df34d5,⛩ 日韩媒体
+- RULE-SET,rule_92b8fde6580c,⛩ 日韩媒体
+- RULE-SET,rule_37c9dcf86847,🌏 港台媒体
+- RULE-SET,rule_4f113fc77ab9,🌏 港台媒体
+- RULE-SET,rule_4f6eb05ee8d4,🌏 港台媒体
+- RULE-SET,rule_68b130d553f4,🌏 港台媒体
+- RULE-SET,rule_5c1851abb4f9,🌏 港台媒体
+- RULE-SET,rule_def5813c0dc4,🌏 港台媒体
+- RULE-SET,rule_4d2b63ea0c01,🌏 港台媒体
+- RULE-SET,rule_22c0c4d2934b,🌏 港台媒体
+- RULE-SET,rule_ddf8da43c757,🌏 港台媒体
+- RULE-SET,rule_e1bc0d8df5b1,🌍 国外媒体
+- RULE-SET,rule_fe669e8e3134,🌍 国外媒体
+- RULE-SET,rule_392e6bdf9630,🌍 国外媒体
+- RULE-SET,rule_8814516108c3,🌍 国外媒体
+- RULE-SET,rule_6e3cc5ba0793,🌍 国外媒体
+- RULE-SET,rule_06aebc6db796,🔍 谷歌服务
+- RULE-SET,rule_fdb996e1849b,🔍 谷歌服务
+- RULE-SET,rule_ffe112de8566,🔍 谷歌服务
+- RULE-SET,rule_c1acf053a860,🔍 谷歌服务
+- RULE-SET,rule_8bf91272bda1,🔍 谷歌服务
+- RULE-SET,rule_c077a0e870bd,🇺🇳 国外网站
+- RULE-SET,rule_fe2a4f391b59,🇺🇳 国外网站
+- RULE-SET,rule_7fe8923ce0e5,🇨🇳 国内网站
+- RULE-SET,rule_a260c3385ba7,🇨🇳 国内网站
+- RULE-SET,rule_c691fcf2eed0,🇨🇳 国内网站
+- RULE-SET,rule_dca4e983c26a,🇨🇳 国内网站
+- MATCH,🐟 漏网之鱼

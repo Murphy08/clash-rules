@@ -1,0 +1,189 @@
+proxy-groups:
+- name: 🔰 线路选择
+  type: select
+  include-all-proxies: true
+  filter: (?:select)|(?:.*)
+  proxies:
+  - 🚁 vip2-AUTO
+  - 🛰 IPLC-AUTO
+  - 🚀 vip1-AUTO
+  - ⏩ 直连
+- name: 🎥 分流-NETFLIX
+  type: select
+  include-all-proxies: true
+  filter: (?:v)
+  proxies:
+  - 🔰 线路选择
+  - 🚁 vip2-AUTO
+  - ⏩ 直连
+- name: 🎥 分流-YouTube
+  type: select
+  include-all-proxies: true
+  filter: (?:v)
+  proxies:
+  - 🔰 线路选择
+  - 🚁 vip2-AUTO
+  - ⏩ 直连
+- name: 📲 分流-电报代理
+  type: select
+  include-all-proxies: true
+  filter: (?:v)
+  proxies:
+  - 🔰 线路选择
+  - 🛰 IPLC-AUTO
+  - ⏩ 直连
+- name: 📺 分流-巴哈姆特
+  type: select
+  include-all-proxies: true
+  filter: (?:台)
+  proxies:
+  - 🔰 线路选择
+  - ⏩ 直连
+- name: 🛑 广告拦截
+  type: select
+  proxies:
+  - 🚫 屏蔽
+  - ⏩ 直连
+- name: 🌍 国外媒体
+  type: select
+  proxies:
+  - 🔰 线路选择
+  - 🚁 vip2-AUTO
+  - ⏩ 直连
+- name: 🌏 国内媒体
+  type: select
+  proxies:
+  - ⏩ 直连
+  - 🔰 线路选择
+- name: 🐟 漏网之鱼
+  type: select
+  proxies:
+  - 🔰 线路选择
+  - 🚁 vip2-AUTO
+  - ⏩ 直连
+- name: 🚀 vip1-AUTO
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 400
+  include-all-proxies: true
+  filter: (?:v1)
+- name: 🚁 vip2-AUTO
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 400
+  include-all-proxies: true
+  filter: (?:v2[0-9])
+- name: 🛰 IPLC-AUTO
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 400
+  include-all-proxies: true
+  filter: (?:IPLC)
+- name: ⏩ 直连
+  type: select
+  proxies:
+  - DIRECT
+- name: 🚫 屏蔽
+  type: select
+  proxies:
+  - REJECT
+rule-providers:
+  rule_ea89004e5b0b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Unbreak.list
+    path: ./rule_providers/rule_ea89004e5b0b.list
+    interval: 86400
+  rule_c3c18ccaef2a:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/NobyDa/Script/master/Surge/AdRule.list
+    path: ./rule_providers/rule_c3c18ccaef2a.list
+    interval: 86400
+  rule_abb5b7f367ea:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Hijacking.list
+    path: ./rule_providers/rule_abb5b7f367ea.list
+    interval: 86400
+  rule_478466a60e71:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Media/YouTube.list
+    path: ./rule_providers/rule_478466a60e71.list
+    interval: 86400
+  rule_b70f15cfde01:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Media/Netflix.list
+    path: ./rule_providers/rule_b70f15cfde01.list
+    interval: 86400
+  rule_51fb823af1f4:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Media/Bahamut.list
+    path: ./rule_providers/rule_51fb823af1f4.list
+    interval: 86400
+  rule_85b535c5f09b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/GlobalMedia.list
+    path: ./rule_providers/rule_85b535c5f09b.list
+    interval: 86400
+  rule_cb94f1b27bda:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/dler-io/Rules/master/Surge/Surge%203/Provider/Domestic.list
+    path: ./rule_providers/rule_cb94f1b27bda.list
+    interval: 86400
+  rule_3177e472428d:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Telegram.list
+    path: ./rule_providers/rule_3177e472428d.list
+    interval: 86400
+  rule_2b4c52a62bb0:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Global.list
+    path: ./rule_providers/rule_2b4c52a62bb0.list
+    interval: 86400
+  rule_471836321aa7:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/China.list
+    path: ./rule_providers/rule_471836321aa7.list
+    interval: 86400
+  rule_c98339b44280:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Download.list
+    path: ./rule_providers/rule_c98339b44280.list
+    interval: 86400
+rules:
+- RULE-SET,rule_ea89004e5b0b,DIRECT
+- RULE-SET,rule_c3c18ccaef2a,🛑 广告拦截
+- RULE-SET,rule_abb5b7f367ea,🛑 广告拦截
+- RULE-SET,rule_478466a60e71,🎥 分流-YouTube
+- RULE-SET,rule_b70f15cfde01,🎥 分流-NETFLIX
+- RULE-SET,rule_51fb823af1f4,📺 分流-巴哈姆特
+- RULE-SET,rule_85b535c5f09b,🌍 国外媒体
+- RULE-SET,rule_cb94f1b27bda,🌏 国内媒体
+- RULE-SET,rule_3177e472428d,📲 分流-电报代理
+- RULE-SET,rule_2b4c52a62bb0,🔰 线路选择
+- RULE-SET,rule_471836321aa7,DIRECT
+- RULE-SET,rule_c98339b44280,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,🐟 漏网之鱼

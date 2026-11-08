@@ -1,0 +1,345 @@
+proxy-groups:
+- name: 🚀 节点选择
+  type: select
+  proxies:
+  - ♻️ 自动选择
+  - 🇺🇲 美国自动
+  - 🇭🇰 香港自动
+  - 🇨🇳 台湾自动
+  - 🇸🇬 狮城自动
+  - 🇯🇵 日本自动
+  - 🚀 手动切换1
+  - DIRECT
+- name: 🚀 手动切换1
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+- name: ♻️ 自动选择
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 200
+  include-all-proxies: true
+  filter: (?:.*)
+- name: 🌍 国外媒体
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - DIRECT
+  - 🇺🇲 美国自动
+  - 🇭🇰 香港自动
+  - 🇨🇳 台湾自动
+  - 🇸🇬 狮城自动
+  - 🇯🇵 日本自动
+  - 🚀 手动切换1
+- name: 📢 谷歌FCM
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - DIRECT
+  - 🇺🇲 美国自动
+  - 🇭🇰 香港自动
+  - 🇨🇳 台湾自动
+  - 🇸🇬 狮城自动
+  - 🇯🇵 日本自动
+  - 🚀 手动切换1
+- name: Ⓜ️ 微软云盘
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - DIRECT
+  - 🇺🇲 美国自动
+  - 🇭🇰 香港自动
+  - 🇨🇳 台湾自动
+  - 🇸🇬 狮城自动
+  - 🇯🇵 日本自动
+  - 🚀 手动切换1
+- name: Ⓜ️ 微软服务
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - DIRECT
+  - 🇺🇲 美国自动
+  - 🇭🇰 香港自动
+  - 🇨🇳 台湾自动
+  - 🇸🇬 狮城自动
+  - 🇯🇵 日本自动
+  - 🚀 手动切换1
+- name: 🍎 苹果服务
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - DIRECT
+  - 🇺🇲 美国自动
+  - 🇭🇰 香港自动
+  - 🇨🇳 台湾自动
+  - 🇸🇬 狮城自动
+  - 🇯🇵 日本自动
+  - 🚀 手动切换1
+- name: 🎮 游戏平台
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - 🚀 节点选择
+  - DIRECT
+  - 🇺🇲 美国自动
+  - 🇭🇰 香港自动
+  - 🇨🇳 台湾自动
+  - 🇸🇬 狮城自动
+  - 🇯🇵 日本自动
+  - 🚀 手动切换1
+- name: 🔑 RemoteSSH
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - DIRECT
+  - 🇺🇲 美国自动
+  - 🇭🇰 香港自动
+  - 🇨🇳 台湾自动
+  - 🇸🇬 狮城自动
+  - 🇯🇵 日本自动
+  - 🚀 手动切换1
+- name: 🎯 全球直连
+  type: select
+  proxies:
+  - DIRECT
+  - 🚀 节点选择
+  - 🚀 手动切换1
+- name: 🐟 漏网之鱼
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - 🚀 节点选择
+  - DIRECT
+  - 🇺🇲 美国自动
+  - 🇭🇰 香港自动
+  - 🇨🇳 台湾自动
+  - 🇸🇬 狮城自动
+  - 🇯🇵 日本自动
+  - 🚀 手动切换1
+- name: 🇺🇲 美国自动
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 250
+  include-all-proxies: true
+  filter: (?:^((?!AUS).)*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|UnitedStates|USA|US|United
+    States|America|California)((?!AUS).)*)
+- name: 🇭🇰 香港自动
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 150
+  include-all-proxies: true
+  filter: (?:香港|HK|Hong Kong|Hongkong)
+- name: 🇨🇳 台湾自动
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 150
+  include-all-proxies: true
+  filter: (?:台|新北|彰化|TW|Taiwan)
+- name: 🇸🇬 狮城自动
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 150
+  include-all-proxies: true
+  filter: (?:新加坡|坡|狮城|SG|Singapore)
+- name: 🇯🇵 日本自动
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 150
+  include-all-proxies: true
+  filter: (?:日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan|Tokyo)
+rule-providers:
+  rule_2df87bf3d61c:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    path: ./rule_providers/rule_2df87bf3d61c.list
+    interval: 86400
+  rule_e08c98216061:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
+    path: ./rule_providers/rule_e08c98216061.list
+    interval: 86400
+  rule_9a2855b5a6e1:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
+    path: ./rule_providers/rule_9a2855b5a6e1.list
+    interval: 86400
+  rule_c02c8629ffc5:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/WC-Dream/ACL4SSR/WD/Clash/ssh.list
+    path: ./rule_providers/rule_c02c8629ffc5.list
+    interval: 86400
+  rule_70d84fef833b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
+    path: ./rule_providers/rule_70d84fef833b.list
+    interval: 86400
+  rule_32d15d84dcc8:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+    path: ./rule_providers/rule_32d15d84dcc8.list
+    interval: 86400
+  rule_a6b5a2671532:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+    path: ./rule_providers/rule_a6b5a2671532.list
+    interval: 86400
+  rule_5feb799ce67a:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list
+    path: ./rule_providers/rule_5feb799ce67a.list
+    interval: 86400
+  rule_9578baa0cc51:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list
+    path: ./rule_providers/rule_9578baa0cc51.list
+    interval: 86400
+  rule_335cc3fd047b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.list
+    path: ./rule_providers/rule_335cc3fd047b.list
+    interval: 86400
+  rule_6d2c8aae7432:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/WC-Dream/ACL4SSR/WD/Clash/steam.list
+    path: ./rule_providers/rule_6d2c8aae7432.list
+    interval: 86400
+  rule_4452a6cc3813:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+    path: ./rule_providers/rule_4452a6cc3813.list
+    interval: 86400
+  rule_3abbf814851e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
+    path: ./rule_providers/rule_3abbf814851e.list
+    interval: 86400
+  rule_ca9b09d706f6:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/WC-Dream/ACL4SSR/WD/Clash/proxy.list
+    path: ./rule_providers/rule_ca9b09d706f6.list
+    interval: 86400
+  rule_26e5cbfb5e7e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://ruleset.skk.moe/List/non_ip/global.conf
+    path: ./rule_providers/rule_26e5cbfb5e7e.list
+    interval: 86400
+  rule_71788318423f:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+    path: ./rule_providers/rule_71788318423f.list
+    interval: 86400
+  rule_d31b4fd35862:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/WC-Dream/ACL4SSR/WD/Clash/direct.list
+    path: ./rule_providers/rule_d31b4fd35862.list
+    interval: 86400
+  rule_682e137927a0:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./rule_providers/rule_682e137927a0.list
+    interval: 86400
+  rule_5d09e19fea0f:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./rule_providers/rule_5d09e19fea0f.list
+    interval: 86400
+  rule_16f47460ef51:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list
+    path: ./rule_providers/rule_16f47460ef51.list
+    interval: 86400
+  rule_e8d0244f7ef1:
+    type: http
+    behavior: classical
+    format: text
+    url: https://ruleset.skk.moe/List/non_ip/domestic.conf
+    path: ./rule_providers/rule_e8d0244f7ef1.list
+    interval: 86400
+  rule_2ea69d91f666:
+    type: http
+    behavior: classical
+    format: text
+    url: https://ruleset.skk.moe/List/ip/china_ip.conf
+    path: ./rule_providers/rule_2ea69d91f666.list
+    interval: 86400
+  rule_1c116637781b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
+    path: ./rule_providers/rule_1c116637781b.list
+    interval: 86400
+rules:
+- RULE-SET,rule_2df87bf3d61c,🎯 全球直连
+- RULE-SET,rule_e08c98216061,🎯 全球直连
+- RULE-SET,rule_9a2855b5a6e1,📢 谷歌FCM
+- RULE-SET,rule_c02c8629ffc5,🔑 RemoteSSH
+- RULE-SET,rule_70d84fef833b,Ⓜ️ 微软云盘
+- RULE-SET,rule_32d15d84dcc8,Ⓜ️ 微软服务
+- RULE-SET,rule_a6b5a2671532,🍎 苹果服务
+- RULE-SET,rule_5feb799ce67a,🎮 游戏平台
+- RULE-SET,rule_9578baa0cc51,🎮 游戏平台
+- RULE-SET,rule_335cc3fd047b,🎮 游戏平台
+- RULE-SET,rule_6d2c8aae7432,🎮 游戏平台
+- RULE-SET,rule_4452a6cc3813,🌍 国外媒体
+- RULE-SET,rule_3abbf814851e,🚀 节点选择
+- RULE-SET,rule_ca9b09d706f6,🚀 节点选择
+- RULE-SET,rule_26e5cbfb5e7e,🚀 节点选择
+- RULE-SET,rule_71788318423f,🎯 全球直连
+- RULE-SET,rule_d31b4fd35862,🎯 全球直连
+- RULE-SET,rule_682e137927a0,🎯 全球直连
+- RULE-SET,rule_5d09e19fea0f,🎯 全球直连
+- RULE-SET,rule_16f47460ef51,🎯 全球直连
+- RULE-SET,rule_e8d0244f7ef1,🎯 全球直连
+- RULE-SET,rule_2ea69d91f666,🎯 全球直连
+- RULE-SET,rule_1c116637781b,🎯 全球直连
+- GEOIP,CN,🎯 全球直连
+- MATCH,🐟 漏网之鱼

@@ -1,0 +1,168 @@
+proxy-groups:
+- name: Proxies
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - HK
+  - JP
+  - SG
+  - TW
+  - US
+- name: Netflix
+  type: select
+  include-all-proxies: true
+  filter: (?:NF\|Netflix\|NETFLIX\|原生\|解锁)
+  proxies:
+  - Proxies
+  - HK
+  - JP
+  - SG
+  - TW
+  - US
+- name: Disney
+  type: select
+  proxies:
+  - Proxies
+  - HK
+  - JP
+  - SG
+  - TW
+  - US
+- name: Streaming
+  type: select
+  proxies:
+  - Proxies
+  - HK
+  - JP
+  - SG
+  - TW
+  - US
+- name: StreamingSE
+  type: select
+  proxies:
+  - DIRECT
+  - HK
+  - TW
+- name: Apple
+  type: select
+  proxies:
+  - Proxies
+  - DIRECT
+  - HK
+  - JP
+  - US
+- name: HK
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  include-all-proxies: true
+  filter: (?:港\|HK\|Hong\ Kong)
+- name: SG
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  include-all-proxies: true
+  filter: (?:新\|新加坡\|狮城\|SG\|Singapore)
+- name: TW
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  include-all-proxies: true
+  filter: (?:台\|新北\|彰化\|TW\|Taiwan)
+- name: JP
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  include-all-proxies: true
+  filter: (?:日\(\(\?!用\)\.\)\+\|\[\^\-\]日\|东京\|大阪\|埼玉\|JP\|Japan)
+- name: US
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  include-all-proxies: true
+  filter: (?:美\|洛杉矶\|硅谷\|达拉斯\|费利蒙\|凤凰城\|芝加哥\|圣何塞\|西雅图\|US\|America\|USA)
+rule-providers:
+  rule_3c1ed6b3832d:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/Unbreak.list
+    path: ./rule_providers/rule_3c1ed6b3832d.list
+    interval: 86400
+  rule_fbd002fe1c9e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/Guard/Advertising.list
+    path: ./rule_providers/rule_fbd002fe1c9e.list
+    interval: 86400
+  rule_b1a3dd5e72e9:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/StreamingMedia/Video/Netflix.list
+    path: ./rule_providers/rule_b1a3dd5e72e9.list
+    interval: 86400
+  rule_59e33c92855b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/StreamingMedia/Video/DisneyPlus.list
+    path: ./rule_providers/rule_59e33c92855b.list
+    interval: 86400
+  rule_057bdd8014c5:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/StreamingMedia/Streaming.list
+    path: ./rule_providers/rule_057bdd8014c5.list
+    interval: 86400
+  rule_f0940c0a7af0:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/StreamingMedia/StreamingSE.list
+    path: ./rule_providers/rule_f0940c0a7af0.list
+    interval: 86400
+  rule_e6e17c2bf308:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/Extra/Apple/Apple.list
+    path: ./rule_providers/rule_e6e17c2bf308.list
+    interval: 86400
+  rule_3612ef52d60d:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/Global.list
+    path: ./rule_providers/rule_3612ef52d60d.list
+    interval: 86400
+  rule_16f1e7b1b6f0:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/China.list
+    path: ./rule_providers/rule_16f1e7b1b6f0.list
+    interval: 86400
+  rule_cf8da0e1000e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/AGWA5783/Profiles/master/Surge/Ruleset/LocalAreaNetwork.list
+    path: ./rule_providers/rule_cf8da0e1000e.list
+    interval: 86400
+rules:
+- RULE-SET,rule_3c1ed6b3832d,DIRECT
+- RULE-SET,rule_fbd002fe1c9e,REJECT
+- RULE-SET,rule_b1a3dd5e72e9,Netflix
+- RULE-SET,rule_59e33c92855b,Disney
+- RULE-SET,rule_057bdd8014c5,Streaming
+- RULE-SET,rule_f0940c0a7af0,StreamingSE
+- RULE-SET,rule_e6e17c2bf308,Apple
+- RULE-SET,rule_3612ef52d60d,Proxies
+- RULE-SET,rule_16f1e7b1b6f0,DIRECT
+- RULE-SET,rule_cf8da0e1000e,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,Proxies

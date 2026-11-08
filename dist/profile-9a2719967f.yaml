@@ -1,0 +1,119 @@
+proxy-groups:
+- name: Global
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+- name: Domestic
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - DIRECT
+  - Global
+- name: AdBlock
+  type: select
+  proxies:
+  - REJECT
+  - Global
+  - Domestic
+- name: Apple_API
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - Domestic
+  - Global
+- name: Apple_CDN
+  type: select
+  proxies:
+  - Domestic
+  - Apple_API
+- name: AsianMedia
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - Domestic
+  - Global
+- name: GlobalMedia
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - Global
+  - Domestic
+rule-providers:
+  rule_d07a19135d39:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Liby.list
+    path: ./rule_providers/rule_d07a19135d39.list
+    interval: 86400
+  rule_94003fd19e87:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Tide.list
+    path: ./rule_providers/rule_94003fd19e87.list
+    interval: 86400
+  rule_fd17a2bf20ff:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Apple_CDN.list
+    path: ./rule_providers/rule_fd17a2bf20ff.list
+    interval: 86400
+  rule_e5a677842fc9:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Apple_API.list
+    path: ./rule_providers/rule_e5a677842fc9.list
+    interval: 86400
+  rule_beb4e98b7877:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/AsianMedia.list
+    path: ./rule_providers/rule_beb4e98b7877.list
+    interval: 86400
+  rule_6c3159e48e83:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/GlobalMedia.list
+    path: ./rule_providers/rule_6c3159e48e83.list
+    interval: 86400
+  rule_ac87fbd31198:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Domestic.list
+    path: ./rule_providers/rule_ac87fbd31198.list
+    interval: 86400
+  rule_596ec610504b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Global.list
+    path: ./rule_providers/rule_596ec610504b.list
+    interval: 86400
+  rule_9cced73f1092:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Region.list
+    path: ./rule_providers/rule_9cced73f1092.list
+    interval: 86400
+rules:
+- RULE-SET,rule_d07a19135d39,AdBlock
+- RULE-SET,rule_94003fd19e87,AdBlock
+- RULE-SET,rule_fd17a2bf20ff,Apple_CDN
+- RULE-SET,rule_e5a677842fc9,Apple_API
+- RULE-SET,rule_beb4e98b7877,AsianMedia
+- RULE-SET,rule_6c3159e48e83,GlobalMedia
+- RULE-SET,rule_ac87fbd31198,Domestic
+- RULE-SET,rule_596ec610504b,Global
+- RULE-SET,rule_9cced73f1092,Domestic
+- MATCH,Global

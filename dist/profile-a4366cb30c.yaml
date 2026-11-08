@@ -1,0 +1,549 @@
+proxy-groups:
+- name: 🚀 国外流量
+  type: select
+  proxies:
+  - ♻️ 自动选择
+  - 🔯 故障转移
+  - 🔮 负载均衡
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: ✈️ 手动选择
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+- name: 🛩️ 手动选择备用
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+- name: 🚁 自建节点
+  type: select
+  include-all-proxies: true
+  filter: (?:HK-|TW-|SG-|US-|GB-|KR-)
+- name: 🎯 国内流量
+  type: select
+  include-all-proxies: true
+  filter: (?:电信|联通|移动)
+  proxies:
+  - DIRECT
+  - 🚀 国外流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 🛸 IP归属地伪装
+  type: select
+  include-all-proxies: true
+  filter: (?:CN|电信|联通|移动)
+  proxies:
+  - 🎯 国内流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 🐟 漏网之鱼
+  type: select
+  proxies:
+  - 🚀 国外流量
+  - 🎯 国内流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 🧚 AI
+  type: select
+  include-all-proxies: true
+  filter: (?:Leg)|(?:-AI)|(?:-Claude)|(?:家庭宽带-美国)
+  proxies:
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 📹 YouTube
+  type: select
+  include-all-proxies: true
+  filter: (?:尼日利亚|NG)|(?:土耳其|TR|Turkey)|(?:印度|IN)|(?:蒙古|MN)|(?:澳门|MO)|(?:RU)|(?:尼泊尔|NP)|(?:阿塞拜疆)|(?:孟加拉|BD)|(?:约旦|JO)|(?:柬埔寨|KH)|(?:阿根廷|AR)
+  proxies:
+  - 🚀 国外流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 🎥 Netflix
+  type: select
+  include-all-proxies: true
+  filter: (?:新加坡|坡|狮城|SG|Singapore)|(?:台|新北|彰化|TW|Taiwan)|(?:港|HK|Hong Kong)
+  proxies:
+  - 🚀 国外流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 🐹 DisneyPlus
+  type: select
+  include-all-proxies: true
+  filter: (?:新加坡|坡|狮城|SG|Singapore)|(?:台|新北|彰化|TW|Taiwan)|(?:港|HK|Hong Kong)
+  proxies:
+  - 🚀 国外流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 📽️ PrimeVideo
+  type: select
+  proxies:
+  - 🚀 国外流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 🎦 HBO
+  type: select
+  include-all-proxies: true
+  filter: (?:台|新北|彰化|TW|Taiwan)
+  proxies:
+  - 🚀 国外流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 🎬 EMBY
+  type: select
+  include-all-proxies: true
+  filter: (?:Emby|emby)
+  proxies:
+  - 🚀 国外流量
+  - 🎯 国内流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 🍎 AppleTV
+  type: select
+  proxies:
+  - 🎯 国内流量
+  - 🚀 国外流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 📺 巴哈姆特
+  type: select
+  include-all-proxies: true
+  filter: (?:台|TW|Taiwan|港|HK|Hong Kong)
+  proxies:
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 📺 Bilibili
+  type: select
+  include-all-proxies: true
+  filter: (?:港|HK|Hong Kong)|(?:台|TW|Taiwan)
+  proxies:
+  - 🎯 国内流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 🎵 Spotify
+  type: select
+  include-all-proxies: true
+  filter: (?:菲律宾|PH)|(?:巴基斯坦|PK)|(?:土耳其|TR|Turkey)|(?:尼日利亚|NG)
+  proxies:
+  - 🎯 国内流量
+  - 🚀 国外流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 🎶 TikTok
+  type: select
+  proxies:
+  - 🚀 国外流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 🌍 国外媒体
+  type: select
+  proxies:
+  - 🚀 国外流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 🌏 国内媒体
+  type: select
+  proxies:
+  - 🎯 国内流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 📲 Telegram
+  type: select
+  proxies:
+  - 🚀 国外流量
+  - 🎯 国内流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 🤖 Discord
+  type: select
+  proxies:
+  - 🚀 国外流量
+  - 🎯 国内流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 👨‍💻 GitHub
+  type: select
+  proxies:
+  - 🚀 国外流量
+  - 🎯 国内流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 📢 谷歌FCM
+  type: select
+  proxies:
+  - 🚀 国外流量
+  - 🎯 国内流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: Ⓜ️ 微软云盘
+  type: select
+  proxies:
+  - 🎯 国内流量
+  - 🚀 国外流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: Ⓜ️ 微软服务
+  type: select
+  proxies:
+  - 🎯 国内流量
+  - 🚀 国外流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 🍎 苹果服务
+  type: select
+  proxies:
+  - 🎯 国内流量
+  - 🚀 国外流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 🎮 游戏平台
+  type: select
+  proxies:
+  - 🎯 国内流量
+  - 🚀 国外流量
+  - ✈️ 手动选择
+  - 🛩️ 手动选择备用
+  - 🚁 自建节点
+- name: 🛑 广告拦截
+  type: select
+  proxies:
+  - REJECT
+  - 🎯 国内流量
+  - 🚀 国外流量
+- name: ♻️ 自动选择
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  include-all-proxies: true
+  filter: (?:^(?!.*(电信|联通|移动)).*)
+- name: 🔯 故障转移
+  type: fallback
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  include-all-proxies: true
+  filter: (?:^(?!.*(电信|联通|移动)).*)
+- name: 🔮 负载均衡
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  include-all-proxies: true
+  filter: (?:^(?!.*(电信|联通|移动)).*)
+rule-providers:
+  rule_6c71705aa9c7:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/cutethotw/ClashRule/main/Rule/Custom_Proxy.list
+    path: ./rule_providers/rule_6c71705aa9c7.list
+    interval: 86400
+  rule_8a5c29cae8c3:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml
+    path: ./rule_providers/rule_8a5c29cae8c3.yaml
+    interval: 86400
+  rule_365bcee0e419:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/cutethotw/ClashRule/refs/heads/main/Rule/Claude.list
+    path: ./rule_providers/rule_365bcee0e419.list
+    interval: 86400
+  rule_1fd8e91dbd86:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/cutethotw/ClashRule/refs/heads/main/Rule/AI.yaml
+    path: ./rule_providers/rule_1fd8e91dbd86.yaml
+    interval: 86400
+  rule_40e7b600458c:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/cutethotw/ClashRule/main/Rule/Custom_Direct.list
+    path: ./rule_providers/rule_40e7b600458c.list
+    interval: 86400
+  rule_b090057980f8:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SteamCN/SteamCN.yaml
+    path: ./rule_providers/rule_b090057980f8.yaml
+    interval: 86400
+  rule_0666ebd1f510:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
+    path: ./rule_providers/rule_0666ebd1f510.yaml
+    interval: 86400
+  rule_446aa31c5e89:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PikPak/PikPak.yaml
+    path: ./rule_providers/rule_446aa31c5e89.yaml
+    interval: 86400
+  rule_c8884c85237e:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/lwd-temp/anti-ip-attribution/main/generated/rule-provider.yaml
+    path: ./rule_providers/rule_c8884c85237e.yaml
+    interval: 86400
+  rule_805a972b5a69:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
+    path: ./rule_providers/rule_805a972b5a69.yaml
+    interval: 86400
+  rule_ce638738546a:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
+    path: ./rule_providers/rule_ce638738546a.yaml
+    interval: 86400
+  rule_4aedf1d61c72:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
+    path: ./rule_providers/rule_4aedf1d61c72.yaml
+    interval: 86400
+  rule_9900d2eeb13f:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AmazonPrimeVideo/AmazonPrimeVideo.yaml
+    path: ./rule_providers/rule_9900d2eeb13f.yaml
+    interval: 86400
+  rule_a4b745c8bb93:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml
+    path: ./rule_providers/rule_a4b745c8bb93.yaml
+    interval: 86400
+  rule_2c6f6f5372fd:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBOAsia/HBOAsia.yaml
+    path: ./rule_providers/rule_2c6f6f5372fd.yaml
+    interval: 86400
+  rule_914dde45ce5b:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBOUSA/HBOUSA.yaml
+    path: ./rule_providers/rule_914dde45ce5b.yaml
+    interval: 86400
+  rule_81a6719a61ac:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleTV/AppleTV.yaml
+    path: ./rule_providers/rule_81a6719a61ac.yaml
+    interval: 86400
+  rule_94a8d9f08956:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/cutethotw/ClashRule/main/Rule/Emby.yaml
+    path: ./rule_providers/rule_94a8d9f08956.yaml
+    interval: 86400
+  rule_6afdd70d817b:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Emby/Emby.yaml
+    path: ./rule_providers/rule_6afdd70d817b.yaml
+    interval: 86400
+  rule_1b37c6799c88:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bahamut/Bahamut.yaml
+    path: ./rule_providers/rule_1b37c6799c88.yaml
+    interval: 86400
+  rule_a5fe63813b63:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/BilibiliHMT.list
+    path: ./rule_providers/rule_a5fe63813b63.list
+    interval: 86400
+  rule_aaf79f747419:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Bilibili.list
+    path: ./rule_providers/rule_aaf79f747419.list
+    interval: 86400
+  rule_60d61f34b281:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
+    path: ./rule_providers/rule_60d61f34b281.yaml
+    interval: 86400
+  rule_11281387cf66:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
+    path: ./rule_providers/rule_11281387cf66.yaml
+    interval: 86400
+  rule_449bac06e3d6:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml
+    path: ./rule_providers/rule_449bac06e3d6.yaml
+    interval: 86400
+  rule_00a7d2cf1436:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
+    path: ./rule_providers/rule_00a7d2cf1436.yaml
+    interval: 86400
+  rule_9a2855b5a6e1:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
+    path: ./rule_providers/rule_9a2855b5a6e1.list
+    interval: 86400
+  rule_d38d4df2966a:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml
+    path: ./rule_providers/rule_d38d4df2966a.yaml
+    interval: 86400
+  rule_d78cd8c15026:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
+    path: ./rule_providers/rule_d78cd8c15026.yaml
+    interval: 86400
+  rule_f8a6a2cc765d:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml
+    path: ./rule_providers/rule_f8a6a2cc765d.yaml
+    interval: 86400
+  rule_697191267dac:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
+    path: ./rule_providers/rule_697191267dac.yaml
+    interval: 86400
+  rule_1881c49d132c:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml
+    path: ./rule_providers/rule_1881c49d132c.yaml
+    interval: 86400
+  rule_f5a585db96da:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Game.yaml
+    path: ./rule_providers/rule_f5a585db96da.yaml
+    interval: 86400
+  rule_3abbf814851e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
+    path: ./rule_providers/rule_3abbf814851e.list
+    interval: 86400
+  rule_682e137927a0:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./rule_providers/rule_682e137927a0.list
+    interval: 86400
+  rule_1c116637781b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
+    path: ./rule_providers/rule_1c116637781b.list
+    interval: 86400
+rules:
+- RULE-SET,rule_6c71705aa9c7,🚀 国外流量
+- RULE-SET,rule_8a5c29cae8c3,👨‍💻 GitHub
+- RULE-SET,rule_365bcee0e419,🧚 AI
+- RULE-SET,rule_1fd8e91dbd86,🧚 AI
+- RULE-SET,rule_40e7b600458c,🎯 国内流量
+- RULE-SET,rule_b090057980f8,🎯 国内流量
+- RULE-SET,rule_0666ebd1f510,🎯 国内流量
+- RULE-SET,rule_446aa31c5e89,🚀 国外流量
+- RULE-SET,rule_c8884c85237e,🛸 IP归属地伪装
+- RULE-SET,rule_805a972b5a69,📹 YouTube
+- RULE-SET,rule_ce638738546a,🎥 Netflix
+- RULE-SET,rule_4aedf1d61c72,🐹 DisneyPlus
+- RULE-SET,rule_9900d2eeb13f,📽️ PrimeVideo
+- RULE-SET,rule_a4b745c8bb93,🎦 HBO
+- RULE-SET,rule_2c6f6f5372fd,🎦 HBO
+- RULE-SET,rule_914dde45ce5b,🎦 HBO
+- RULE-SET,rule_81a6719a61ac,🍎 AppleTV
+- RULE-SET,rule_94a8d9f08956,🎬 EMBY
+- RULE-SET,rule_6afdd70d817b,🎬 EMBY
+- RULE-SET,rule_1b37c6799c88,📺 巴哈姆特
+- RULE-SET,rule_a5fe63813b63,📺 Bilibili
+- RULE-SET,rule_aaf79f747419,📺 Bilibili
+- RULE-SET,rule_60d61f34b281,🎵 Spotify
+- RULE-SET,rule_11281387cf66,🎶 TikTok
+- RULE-SET,rule_449bac06e3d6,🌍 国外媒体
+- RULE-SET,rule_00a7d2cf1436,🌏 国内媒体
+- RULE-SET,rule_9a2855b5a6e1,📢 谷歌FCM
+- RULE-SET,rule_d38d4df2966a,Ⓜ️ 微软云盘
+- RULE-SET,rule_d78cd8c15026,Ⓜ️ 微软服务
+- RULE-SET,rule_f8a6a2cc765d,🍎 苹果服务
+- RULE-SET,rule_697191267dac,📲 Telegram
+- RULE-SET,rule_1881c49d132c,🤖 Discord
+- RULE-SET,rule_f5a585db96da,🎮 游戏平台
+- RULE-SET,rule_3abbf814851e,🚀 国外流量
+- RULE-SET,rule_682e137927a0,🎯 国内流量
+- RULE-SET,rule_1c116637781b,🎯 国内流量
+- GEOIP,CN,no-resolve,🎯 国内流量
+- MATCH,🐟 漏网之鱼

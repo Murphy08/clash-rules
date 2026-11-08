@@ -1,0 +1,234 @@
+proxy-groups:
+- name: Proxies
+  type: select
+  include-all-proxies: true
+  filter: (?:^(?!.*Daily).*$)
+  proxies:
+  - HK
+  - SG
+  - JP
+  - US
+  - TW
+- name: GFWList
+  type: select
+  proxies:
+  - Proxies
+  - 日用
+- name: Apple
+  type: select
+  proxies:
+  - DIRECT
+  - Proxies
+- name: MicroSoft
+  type: select
+  proxies:
+  - DIRECT
+  - Proxies
+- name: Telegram
+  type: select
+  proxies:
+  - Proxies
+  - 日用
+  - HK
+  - SG
+- name: Youtube
+  type: select
+  proxies:
+  - Proxies
+  - 日用
+  - HK
+  - US
+- name: Streaming
+  type: select
+  include-all-proxies: true
+  filter: (?:NF\|Netflix\|NETFLIX\|原生\|解锁)
+  proxies:
+  - Proxies
+  - HK
+  - SG
+  - JP
+  - US
+  - TW
+- name: StreamingSE
+  type: select
+  proxies:
+  - DIRECT
+  - Proxies
+  - HK
+  - TW
+- name: PlusMedia
+  type: select
+  proxies:
+  - Proxies
+  - 日用
+  - HK
+  - SG
+  - JP
+  - US
+- name: Netease
+  type: select
+  include-all-proxies: true
+  filter: (?:NeteaseUnblock\|Netease\|netease\|网易\|云音乐)
+  proxies:
+  - DIRECT
+  - Proxies
+- name: Final
+  type: select
+  proxies:
+  - Proxies
+  - DIRECT
+- name: 日用
+  type: select
+  include-all-proxies: true
+  filter: (?:Daily)
+- name: HK
+  type: select
+  include-all-proxies: true
+  filter: (?:\(\?=\.\*港\)\(\?!\.\*Lite\)\(\?!\.\*Daily\)\.\*)
+- name: SG
+  type: select
+  include-all-proxies: true
+  filter: (?:\(\?=\.\*新加坡\)\(\?!\.\*Lite\)\(\?!\.\*Daily\)\.\*)
+- name: TW
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  include-all-proxies: true
+  filter: (?:\(\?=\.\*台\)\(\?!\.\*Lite\)\(\?!\.\*Daily\)\.\*)
+- name: JP
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  include-all-proxies: true
+  filter: (?:\(\?=\.\*\(日\|东京\)\)\(\?!\.\*Lite\)\(\?!\.\*Daily\)\.\*)
+- name: US
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  include-all-proxies: true
+  filter: (?:\(\?=\.\*\(美\|洛杉矶\|硅谷\|达拉斯\|费利蒙\|凤凰城\|芝加哥\|圣何塞\|西雅图\|弗里蒙特\|纽约\|哥伦布\)\)\(\?!\.\*Lite\)\(\?!\.\*Daily\)\.\*)
+rule-providers:
+  rule_2e3ffa2fd6a9:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/external/DivineEngine/Surge/Hijacking.list
+    path: ./rule_providers/rule_2e3ffa2fd6a9.list
+    interval: 86400
+  rule_96832ce98ef0:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/force-direct.list
+    path: ./rule_providers/rule_96832ce98ef0.list
+    interval: 86400
+  rule_c4576567e7b4:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/force-proxy.list
+    path: ./rule_providers/rule_c4576567e7b4.list
+    interval: 86400
+  rule_604e74c0db01:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/external/DivineEngine/Surge/Apple.list
+    path: ./rule_providers/rule_604e74c0db01.list
+    interval: 86400
+  rule_28e32d6bbd9a:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/microsoft.list
+    path: ./rule_providers/rule_28e32d6bbd9a.list
+    interval: 86400
+  rule_b65bf496f343:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/external/DivineEngine/Surge/Telegram.list
+    path: ./rule_providers/rule_b65bf496f343.list
+    interval: 86400
+  rule_bb2e7469032c:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/external/DivineEngine/Surge/Streaming.list
+    path: ./rule_providers/rule_bb2e7469032c.list
+    interval: 86400
+  rule_fb6821ccd659:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/media/netease.list
+    path: ./rule_providers/rule_fb6821ccd659.list
+    interval: 86400
+  rule_6090727f4d59:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/external/DivineEngine/Surge/StreamingSE.list
+    path: ./rule_providers/rule_6090727f4d59.list
+    interval: 86400
+  rule_1e57d3cefeff:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/media/emby.list
+    path: ./rule_providers/rule_1e57d3cefeff.list
+    interval: 86400
+  rule_72023851635c:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/gfwlist.list
+    path: ./rule_providers/rule_72023851635c.list
+    interval: 86400
+  rule_1c81a34ef5a4:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/external/DivineEngine/Surge/Global.list
+    path: ./rule_providers/rule_1c81a34ef5a4.list
+    interval: 86400
+  rule_9db479961293:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/local.list
+    path: ./rule_providers/rule_9db479961293.list
+    interval: 86400
+  rule_feefa7750aa5:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/external/DivineEngine/Surge/Unbreak.list
+    path: ./rule_providers/rule_feefa7750aa5.list
+    interval: 86400
+  rule_d61dc99dc3be:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/ruleset/external/DivineEngine/Surge/China.list
+    path: ./rule_providers/rule_d61dc99dc3be.list
+    interval: 86400
+rules:
+- RULE-SET,rule_2e3ffa2fd6a9,REJECT
+- RULE-SET,rule_96832ce98ef0,DIRECT
+- RULE-SET,rule_c4576567e7b4,Proxies
+- RULE-SET,rule_604e74c0db01,Apple
+- RULE-SET,rule_28e32d6bbd9a,MicroSoft
+- RULE-SET,rule_b65bf496f343,Telegram
+- RULE-SET,rule_bb2e7469032c,Streaming
+- RULE-SET,rule_fb6821ccd659,Netease
+- RULE-SET,rule_6090727f4d59,StreamingSE
+- RULE-SET,rule_bb2e7469032c,Streaming
+- RULE-SET,rule_1e57d3cefeff,PlusMedia
+- RULE-SET,rule_72023851635c,GFWList
+- RULE-SET,rule_1c81a34ef5a4,Proxies
+- RULE-SET,rule_9db479961293,DIRECT
+- RULE-SET,rule_feefa7750aa5,DIRECT
+- RULE-SET,rule_d61dc99dc3be,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,Final

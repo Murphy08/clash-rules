@@ -1,0 +1,136 @@
+proxy-groups:
+- name: 🚀 节点选择
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+  proxies:
+  - DIRECT
+- name: '[微软]'
+  type: select
+  proxies:
+  - DIRECT
+  - 🚀 节点选择
+rule-providers:
+  rule_48029c2022d3:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/OoHHHHHHH/ini/master/rules/SelfProxy.list
+    path: ./rule_providers/rule_48029c2022d3.list
+    interval: 86400
+  rule_def13e92830a:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/OoHHHHHHH/ini/master/rules/game.list
+    path: ./rule_providers/rule_def13e92830a.list
+    interval: 86400
+  rule_32d15d84dcc8:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+    path: ./rule_providers/rule_32d15d84dcc8.list
+    interval: 86400
+  rule_70d84fef833b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
+    path: ./rule_providers/rule_70d84fef833b.list
+    interval: 86400
+  rule_2df87bf3d61c:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    path: ./rule_providers/rule_2df87bf3d61c.list
+    interval: 86400
+  rule_e47548363366:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/Dashboard2/subpref/master/rules/Telegram.list
+    path: ./rule_providers/rule_e47548363366.list
+    interval: 86400
+  rule_164316df4b9e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+    path: ./rule_providers/rule_164316df4b9e.list
+    interval: 86400
+  rule_d8cb61c79ff8:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Netflix.list
+    path: ./rule_providers/rule_d8cb61c79ff8.list
+    interval: 86400
+  rule_4b469ca37a03:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list
+    path: ./rule_providers/rule_4b469ca37a03.list
+    interval: 86400
+  rule_4452a6cc3813:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+    path: ./rule_providers/rule_4452a6cc3813.list
+    interval: 86400
+  rule_3abbf814851e:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
+    path: ./rule_providers/rule_3abbf814851e.list
+    interval: 86400
+  rule_4dde39ea88a9:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list
+    path: ./rule_providers/rule_4dde39ea88a9.list
+    interval: 86400
+  rule_682e137927a0:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./rule_providers/rule_682e137927a0.list
+    interval: 86400
+  rule_5d09e19fea0f:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./rule_providers/rule_5d09e19fea0f.list
+    interval: 86400
+  rule_1c116637781b:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
+    path: ./rule_providers/rule_1c116637781b.list
+    interval: 86400
+rules:
+- RULE-SET,rule_48029c2022d3,🚀 节点选择
+- RULE-SET,rule_def13e92830a,🚀 节点选择
+- RULE-SET,rule_32d15d84dcc8,[微软]
+- RULE-SET,rule_70d84fef833b,[微软]
+- RULE-SET,rule_2df87bf3d61c,DIRECT
+- RULE-SET,rule_e47548363366,🚀 节点选择
+- RULE-SET,rule_164316df4b9e,🚀 节点选择
+- RULE-SET,rule_d8cb61c79ff8,🚀 节点选择
+- RULE-SET,rule_4b469ca37a03,🚀 节点选择
+- RULE-SET,rule_4452a6cc3813,🚀 节点选择
+- RULE-SET,rule_3abbf814851e,🚀 节点选择
+- RULE-SET,rule_4dde39ea88a9,DIRECT
+- RULE-SET,rule_682e137927a0,DIRECT
+- RULE-SET,rule_5d09e19fea0f,DIRECT
+- RULE-SET,rule_1c116637781b,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,🚀 节点选择

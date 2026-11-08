@@ -1,0 +1,89 @@
+proxy-groups:
+- name: 🚀 全局设置
+  type: select
+  proxies:
+  - ♻️ 自动选择节点
+  - 🚀 手动选择节点
+- name: 🚀 手动选择节点
+  type: select
+  include-all-proxies: true
+  filter: (?:.*)
+- name: ♻️ 自动选择节点
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  include-all-proxies: true
+  filter: (?:.*)
+- name: 🎯 国内网站设置
+  type: select
+  proxies:
+  - DIRECT
+  - 🚀 全局设置
+  - ♻️ 自动选择节点
+  - 🚀 手动选择节点
+rule-providers:
+  rule_83cc92ef21a8:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.statically.io/gh/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    path: ./rule_providers/rule_83cc92ef21a8.list
+    interval: 86400
+  rule_f592cba47f4d:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.statically.io/gh/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
+    path: ./rule_providers/rule_f592cba47f4d.list
+    interval: 86400
+  rule_12d5f841a3d0:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.statically.io/gh/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+    path: ./rule_providers/rule_12d5f841a3d0.list
+    interval: 86400
+  rule_7cf97d021de3:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.statically.io/gh/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
+    path: ./rule_providers/rule_7cf97d021de3.list
+    interval: 86400
+  rule_0d2db4fcfc13:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.statically.io/gh/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list
+    path: ./rule_providers/rule_0d2db4fcfc13.list
+    interval: 86400
+  rule_2f769515fa71:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.statically.io/gh/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./rule_providers/rule_2f769515fa71.list
+    interval: 86400
+  rule_478fe721b525:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.statically.io/gh/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./rule_providers/rule_478fe721b525.list
+    interval: 86400
+  rule_5551401deea4:
+    type: http
+    behavior: classical
+    format: text
+    url: https://cdn.statically.io/gh/ACL4SSR/ACL4SSR/master/Clash/Download.list
+    path: ./rule_providers/rule_5551401deea4.list
+    interval: 86400
+rules:
+- RULE-SET,rule_83cc92ef21a8,🎯 国内网站设置
+- RULE-SET,rule_f592cba47f4d,🎯 国内网站设置
+- RULE-SET,rule_12d5f841a3d0,🎯 国内网站设置
+- RULE-SET,rule_7cf97d021de3,🚀 全局设置
+- RULE-SET,rule_0d2db4fcfc13,🎯 国内网站设置
+- RULE-SET,rule_2f769515fa71,🎯 国内网站设置
+- RULE-SET,rule_478fe721b525,🎯 国内网站设置
+- RULE-SET,rule_5551401deea4,🎯 国内网站设置
