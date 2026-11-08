@@ -545,5 +545,5 @@ rules:
 - RULE-SET,rule_3abbf814851e,🚀 国外流量
 - RULE-SET,rule_682e137927a0,🎯 国内流量
 - RULE-SET,rule_1c116637781b,🎯 国内流量
-- GEOIP,CN,no-resolve,🎯 国内流量
+- GEOIP,CN,🎯 国内流量,no-resolve
 - MATCH,🐟 漏网之鱼

@@ -138,7 +138,11 @@ def parse_rule_target(destination: str, value: str, providers: dict, rules: list
             rules.append(f"MATCH,{destination}")
             return
         if parts[0] in {"GEOIP", "IP-CIDR", "IP-CIDR6", "DOMAIN", "DOMAIN-SUFFIX", "DOMAIN-KEYWORD"} and len(parts) >= 2:
-            rules.append(f"{rule},{destination}")
+            options = [part for part in parts[2:] if part]
+            if any(option != "no-resolve" for option in options):
+                raise ValueError(f"unsupported inline rule option: {value}")
+            suffix = ",no-resolve" if "no-resolve" in options else ""
+            rules.append(f"{parts[0]},{parts[1]},{destination}{suffix}")
             return
         raise ValueError(f"unsupported inline rule: {value}")
     behavior, format_name = "classical", "text"

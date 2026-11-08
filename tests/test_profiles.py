@@ -28,7 +28,7 @@ class ProfileConversionTests(unittest.TestCase):
 custom_proxy_group=Proxy`select`[]HK
 custom_proxy_group=HK`select`(HK|Hong Kong)
 ruleset=Proxy,https://example.com/proxy.list
-ruleset=HK,[]GEOIP,CN
+ruleset=HK,[]GEOIP,CN,no-resolve
 ruleset=Proxy,[]FINAL
 """
         generated = convert_ini(source, 1)
@@ -37,7 +37,7 @@ ruleset=Proxy,[]FINAL
         provider = next(iter(parsed["rule-providers"]))
         self.assertEqual(parsed["rules"], [
             f"RULE-SET,{provider},Proxy",
-            "GEOIP,CN,HK",
+            "GEOIP,CN,HK,no-resolve",
             "MATCH,Proxy",
         ])
         self.assertEqual(parsed["proxy-groups"][1]["filter"], "(?:HK|Hong Kong)")
