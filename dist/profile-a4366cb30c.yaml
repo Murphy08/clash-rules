@@ -255,6 +255,9 @@ proxy-groups:
   tolerance: 50
   include-all-proxies: true
   filter: (?:^(?!.*(电信|联通|移动)).*)
+- name: no-resolve
+  type: select
+  include-all-proxies: true
 rule-providers:
   rule_6c71705aa9c7:
     type: http
