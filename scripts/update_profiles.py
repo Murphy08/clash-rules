@@ -359,8 +359,27 @@ def main() -> int:
     report_path = ROOT / "reports" / "latest.json"
     report_path.parent.mkdir(exist_ok=True)
     report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_readme(output_rows)
+    print(f"Updated {len(output_rows)} profiles; {len(failures)} sources failed or retained.")
+    return 0
+
+
+def write_readme(output_rows: list[tuple[str, str]], destination: Path | None = None) -> None:
+    routing_url = f"{REPO_RAW}/dist/routing-only.yaml"
     lines = [
         "# Clash routing fragments",
+        "",
+        "**纯路由规则（无自定义分组，每天北京时间 00:00 同步）**",
+        "",
+        f"[{routing_url}]({routing_url})",
+        "",
+        "将此地址填入 3x-ui 的「全局路由规则 HTTPS URL」，保存后刷新面板订阅。文件仅含 `rules`，不含节点、策略组或远程规则提供者。代理流量使用面板已有的 `PROXY`，国内/局域网流量直连，广告拦截，兜底直连（`MATCH,DIRECT`）。",
+        "",
+        "规则同步自 [kuchiki111/3x-ui-clash-ymal](https://github.com/kuchiki111/3x-ui-clash-ymal) 的 `dist/3x-ui.yaml`；移除其自定义分组，将「兜底选择」按原默认值转换为 `DIRECT`，保留规则顺序和 `no-resolve`。上游同步失败或格式校验失败时，工作流报错并保留最后有效文件。",
+        "",
+        "这是面板合并用的规则片段，Clash 客户端单独导入时仍需在已有配置中提供 `PROXY` 和节点。每日工作流会拉取上游已生成文件，GitHub 定时任务可能延迟。",
+        "",
+        "## 分组配置（每周同步）",
         "",
         "Files are 3x-ui global routing fragments. They contain proxy groups, rule providers, and rules; node definitions and credentials remain in 3x-ui.",
         "",
@@ -373,9 +392,7 @@ def main() -> int:
     ]
     lines.extend(f"| {name.replace('|', '\\|')} | [{url}]({url}) |" for name, url in output_rows)
     lines.extend(["", f"Source catalog: [sub-web-modify Subconverter.vue]({SOURCE_PAGE})", ""])
-    (ROOT / "README.md").write_text("\n".join(lines), encoding="utf-8")
-    print(f"Updated {len(output_rows)} profiles; {len(failures)} sources failed or retained.")
-    return 0
+    (destination or ROOT / "README.md").write_text("\n".join(lines), encoding="utf-8")
 
 
 if __name__ == "__main__":

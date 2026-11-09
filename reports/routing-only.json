@@ -1,0 +1,12 @@
+{
+  "source": "https://raw.githubusercontent.com/kuchiki111/3x-ui-clash-ymal/main/dist/3x-ui.yaml",
+  "source_sha256": "b25bb3c24f22ae2fd5909347111611e700fa75de9aa0512a42412127025ec869",
+  "output": "dist/routing-only.yaml",
+  "rule_count": 14173,
+  "route_counts": {
+    "DIRECT": 8182,
+    "PROXY": 4387,
+    "REJECT": 1604
+  },
+  "fallback": "DIRECT"
+}
