@@ -1,0 +1,52 @@
+{
+  "source": "https://github.com/ACL4SSR/ACL4SSR",
+  "policy": "config/3x-ui-policy.yaml",
+  "policy_sha256": "333dc275c90edad14d48c0bc404660296985a4dd495ed7f393a29e7f0ed261ba",
+  "providers": {
+    "LocalAreaNetwork": {
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/LocalAreaNetwork.yaml",
+      "sha256": "4f283cc1838e4285479506c702816d363184ba43fbfa425ff72b4e0986e8af5e",
+      "entries": 37
+    },
+    "UnBan": {
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/UnBan.yaml",
+      "sha256": "017365034b76942e796cf7aa46fcb7c3382c2d5db1d229e4109151d46f4a7602",
+      "entries": 52
+    },
+    "ChinaDomain": {
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml",
+      "sha256": "1c37f48790d6ff3427aa5176e06607ceab51cb8dd740c9ac8ca8d01039180260",
+      "entries": 635
+    },
+    "ChinaIp": {
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaIp.yaml",
+      "sha256": "0ba5c7979119ddd5438250c99dda0a531c63c022a2791b26844d4f201a62b1df",
+      "entries": 7456
+    },
+    "ProxyGFWlist": {
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml",
+      "sha256": "49cfcb53d38419f5622a107fc7badf955550bf83eac179a748e0051134a3351d",
+      "entries": 4387
+    },
+    "BanAD": {
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanAD.yaml",
+      "sha256": "3ac697e5d522dd0313edae29aead9417359cc69381b7a999de525237d0251b0e",
+      "entries": 588
+    },
+    "BanProgramAD": {
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanProgramAD.yaml",
+      "sha256": "1f6f51f1206d31999804e9da1b715a586cd8c188fa3ee1dd173c77df13dab76d",
+      "entries": 1016
+    }
+  },
+  "output_sha256": "b25bb3c24f22ae2fd5909347111611e700fa75de9aa0512a42412127025ec869",
+  "output": "dist/3x-ui.yaml",
+  "rule_count": 14173,
+  "proxy_groups": [
+    "节点选择",
+    "PROXY",
+    "兜底选择"
+  ],
+  "final_rule": "MATCH,兜底选择",
+  "mode": "direct_acl4ssr_inline_build"
+}

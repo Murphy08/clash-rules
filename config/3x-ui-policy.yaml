@@ -1,0 +1,38 @@
+# Same source selection, route order and default groups as kuchiki111/3x-ui-clash-ymal.
+# Provider contents are fetched directly from ACL4SSR/ACL4SSR.
+providers:
+  LocalAreaNetwork: {behavior: classical, min_entries: 5}
+  UnBan: {behavior: classical, min_entries: 1}
+  ChinaDomain: {behavior: classical, min_entries: 10}
+  ChinaIp: {behavior: ipcidr, min_entries: 100}
+  ProxyGFWlist: {behavior: classical, min_entries: 100}
+  BanAD: {behavior: classical, min_entries: 10}
+  BanProgramAD: {behavior: classical, min_entries: 10}
+
+proxy-groups:
+  - name: 节点选择
+    type: select
+    include-all-proxies: true
+    proxies: []
+  - name: PROXY
+    type: select
+    hidden: true
+    proxies:
+      - 节点选择
+  - name: 兜底选择
+    type: select
+    proxies:
+      - DIRECT
+      - 节点选择
+
+custom_rules: []
+rules:
+  - RULE-SET,LocalAreaNetwork,DIRECT
+  - RULE-SET,UnBan,DIRECT
+  - RULE-SET,BanAD,REJECT
+  - RULE-SET,BanProgramAD,REJECT
+  - RULE-SET,ProxyGFWlist,PROXY
+  - RULE-SET,ChinaDomain,DIRECT
+  - RULE-SET,ChinaIp,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,兜底选择

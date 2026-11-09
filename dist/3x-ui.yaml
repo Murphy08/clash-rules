@@ -1,3 +1,18 @@
+proxy-groups:
+- name: 节点选择
+  type: select
+  include-all-proxies: true
+  proxies: []
+- name: PROXY
+  type: select
+  hidden: true
+  proxies:
+  - 节点选择
+- name: 兜底选择
+  type: select
+  proxies:
+  - DIRECT
+  - 节点选择
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,DIRECT
 - DOMAIN-SUFFIX,ip6-localhost,DIRECT
@@ -14171,4 +14186,4 @@ rules:
 - IP-CIDR,223.255.236.0/22,DIRECT
 - IP-CIDR,223.255.252.0/23,DIRECT
 - GEOIP,CN,DIRECT
-- MATCH,DIRECT
+- MATCH,兜底选择
