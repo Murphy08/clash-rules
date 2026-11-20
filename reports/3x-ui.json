@@ -25,8 +25,8 @@
     },
     "ProxyGFWlist": {
       "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml",
-      "sha256": "eb59212fd473bb26fc10b8fafa919f6951592012e5a166dc7bb832fc90662cda",
-      "entries": 4388
+      "sha256": "ecdea31c4ba56f9a0c59fdfa813bba73be5d85c948bb7cc6d33f8d9ca5ee7057",
+      "entries": 4390
     },
     "BanAD": {
       "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanAD.yaml",
@@ -39,9 +39,9 @@
       "entries": 1016
     }
   },
-  "output_sha256": "93e0f99d14672101c28a655197648b8ee6a17558d7f0924537b213cb59654c63",
+  "output_sha256": "cfc1a8e124f608ff1be5e3abdf7112710b8c8c3cfd5cdb8f4f40d35db1bc1d0f",
   "output": "dist/3x-ui.yaml",
-  "rule_count": 14174,
+  "rule_count": 14176,
   "proxy_groups": [
     "节点选择",
     "PROXY",
