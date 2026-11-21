@@ -25,13 +25,13 @@
     },
     "ProxyGFWlist": {
       "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml",
-      "sha256": "ecdea31c4ba56f9a0c59fdfa813bba73be5d85c948bb7cc6d33f8d9ca5ee7057",
-      "entries": 4390
+      "sha256": "2e2943b0f17c68ebaca20b7388e7d1deb2f4c31cf3cac4c2622010aab4c15df6",
+      "entries": 4415
     },
     "BanAD": {
       "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanAD.yaml",
-      "sha256": "3ac697e5d522dd0313edae29aead9417359cc69381b7a999de525237d0251b0e",
-      "entries": 588
+      "sha256": "e3c2e3520a5f715b872bf6d381e771e1cb092c64f90bc5caba7d1938998f432d",
+      "entries": 590
     },
     "BanProgramAD": {
       "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanProgramAD.yaml",
@@ -39,9 +39,9 @@
       "entries": 1016
     }
   },
-  "output_sha256": "cfc1a8e124f608ff1be5e3abdf7112710b8c8c3cfd5cdb8f4f40d35db1bc1d0f",
+  "output_sha256": "c0cb8bd4e4c4a7b120eb31023691684d13b9e52f1de66f9783cfa9ead771dc18",
   "output": "dist/3x-ui.yaml",
-  "rule_count": 14176,
+  "rule_count": 14203,
   "proxy_groups": [
     "节点选择",
     "PROXY",
