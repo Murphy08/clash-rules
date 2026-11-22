@@ -383,12 +383,12 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
     path: ./rule_providers/rule_32d15d84dcc8.list
     interval: 86400
-  rule_a6b5a2671532:
+  rule_759160c2eb47:
     type: http
     behavior: classical
     format: text
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
-    path: ./rule_providers/rule_a6b5a2671532.list
+    url: https://raw.githubusercontent.com/youshandefeiyang/ACL4SSR/refs/heads/master/Clash/Apple.list
+    path: ./rule_providers/rule_759160c2eb47.list
     interval: 86400
   rule_d7ffba4c1b81:
     type: http
@@ -544,9 +544,8 @@ rules:
 - RULE-SET,rule_d531bb7429dc,Ⓜ️ 微软Bing
 - RULE-SET,rule_70d84fef833b,Ⓜ️ 微软云盘
 - RULE-SET,rule_32d15d84dcc8,Ⓜ️ 微软服务
-- RULE-SET,rule_a6b5a2671532,🍎 苹果服务
+- RULE-SET,rule_759160c2eb47,🍎 苹果服务
 - RULE-SET,rule_d7ffba4c1b81,📲 电报消息
-- RULE-SET,rule_6f7a2f28dd11,💬 Ai平台
 - RULE-SET,rule_6f7a2f28dd11,💬 Ai平台
 - RULE-SET,rule_0466cc58e54f,💬 Ai平台
 - RULE-SET,rule_d003089cd3d4,🎶 网易音乐
